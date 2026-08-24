@@ -1,0 +1,84 @@
+---
+/**
+ * One-click dark/light toggle replacing Starlight's ThemeSelect dropdown,
+ * matching the sun/moon switch of the GONDI app header. Registered via the
+ * `components.ThemeSelect` override in astro.config.mjs, so it also renders
+ * in the mobile menu footer.
+ */
+---
+
+<button type="button" class="gondi-theme-toggle" aria-live="polite">
+  <svg
+    class="gondi-theme-toggle-sun"
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-2a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1Zm0 16a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Zm10-8a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM6 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Zm12.95-6.54a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0ZM7.88 16.12a1 1 0 0 1 0 1.41l-1.42 1.42a1 1 0 0 1-1.41-1.41l1.41-1.42a1 1 0 0 1 1.42 0Zm11.07 1.42a1 1 0 1 1-1.41 1.41l-1.42-1.41a1 1 0 0 1 1.42-1.42l1.41 1.42ZM7.88 7.88a1 1 0 0 1-1.42 0L5.05 6.46a1 1 0 0 1 1.41-1.41l1.42 1.41a1 1 0 0 1 0 1.42Z"
+    ></path>
+  </svg>
+  <svg
+    class="gondi-theme-toggle-moon"
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path
+      d="M21.53 15.93A9 9 0 0 1 8.07 2.47 9 9 0 1 0 21.53 15.93ZM12.6 4.4a11 11 0 0 0 7 15.4A7 7 0 0 1 12.6 4.4Z"
+    ></path>
+  </svg>
+</button>
+
+<style is:global>
+  .gondi-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--sl-color-gray-1);
+    cursor: pointer;
+  }
+
+  .gondi-theme-toggle:hover {
+    background-color: color-mix(in srgb, var(--sl-color-gray-4) 25%, transparent);
+    color: var(--sl-color-white);
+  }
+
+  :root[data-theme='light'] .gondi-theme-toggle-sun,
+  :root[data-theme='dark'] .gondi-theme-toggle-moon {
+    display: none;
+  }
+</style>
+
+<script>
+  const THEME_STORAGE_KEY = 'starlight-theme';
+
+  const label = (theme: string) =>
+    theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+
+  const applyTheme = (theme: 'light' | 'dark') => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    for (const toggle of document.querySelectorAll('.gondi-theme-toggle')) {
+      toggle.setAttribute('aria-label', label(theme));
+      toggle.setAttribute('title', label(theme));
+    }
+  };
+
+  for (const toggle of document.querySelectorAll('.gondi-theme-toggle')) {
+    toggle.setAttribute('aria-label', label(document.documentElement.dataset.theme ?? 'dark'));
+    toggle.addEventListener('click', () => {
+      applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+  }
+</script>

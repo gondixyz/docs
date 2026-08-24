@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * GONDI app palette (frontend/src/pages/globals.css): monochrome primary
+ * (#141414 / #ffffff), green secondary for positive states, orange tertiary
+ * only as a sparse attention color — never as a text accent.
+ */
+:root {
+  --sl-font: 'Suisse Intl', Arial, Helvetica, sans-serif;
+  --gondi-green: #254535;
+  --gondi-orange: #ed742f;
+
+  --sl-color-accent-low: #e8e8e8;
+  --sl-color-accent: #141414;
+  --sl-color-accent-high: #141414;
+  --sl-color-white: #141414;
+  --sl-color-gray-1: #2a2a2a;
+  --sl-color-gray-2: #444444;
+  --sl-color-gray-3: #707070;
+  --sl-color-gray-4: #a3a3a3;
+  --sl-color-gray-5: #d6d6d6;
+  --sl-color-gray-6: #f2f2f2;
+  --sl-color-gray-7: #f7f7f7;
+  --sl-color-black: #ffffff;
+  --sl-color-text-accent: #141414;
+  --sl-color-bg-sidebar: #f7f7f7;
+  --sl-color-hairline-shade: #e5e5e5;
+}
+
+:root[data-theme='dark'] {
+  --gondi-green: #7eba9c;
+
+  --sl-color-accent-low: #2e2e2e;
+  --sl-color-accent: #ffffff;
+  --sl-color-accent-high: #ffffff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eeeeee;
+  --sl-color-gray-2: #c2c2c2;
+  --sl-color-gray-3: #8a8a8a;
+  --sl-color-gray-4: #585858;
+  --sl-color-gray-5: #383838;
+  --sl-color-gray-6: #232323;
+  --sl-color-gray-7: #1a1a1a;
+  --sl-color-black: #141414;
+  --sl-color-text-accent: #ffffff;
+  --sl-color-bg-sidebar: #1a1a1a;
+  --sl-color-hairline-shade: #2e2e2e;
+}
+
+:root {
+  --sl-text-h1: 2.25rem;
+  --sl-text-h2: 1.625rem;
+  --sl-text-h3: 1.25rem;
+  --sl-text-h4: 1.0625rem;
+  --sl-content-width: 46rem;
+}
+
+.site-title img {
+  height: 1.5rem;
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4 {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Links read like the app's: same color as the text, plain underline. */
+.sl-markdown-content a:not(:where(.not-content *)) {
+  color: var(--sl-color-white);
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--sl-color-gray-4);
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):hover {
+  text-decoration-color: currentColor;
+}
+
+.sl-markdown-content img:not(:where(.not-content *)) {
+  border-radius: 0.5rem;
+  border: 1px solid var(--sl-color-hairline-shade);
+}
+
+.sl-markdown-content img + em,
+.sl-markdown-content img + p > em:only-child {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+
+.sl-markdown-content table:not(:where(.not-content *)) {
+  display: block;
+  overflow-x: auto;
+}
+
+.sl-markdown-content code:not(:where(.not-content *)) {
+  font-size: 0.875em;
+}
+
+/* Sidebar states mirror the app's menus: neutral surfaces, no color accent. */
+.sidebar-content a:hover,
+.sidebar-content a:focus {
+  color: var(--sl-color-white);
+  background-color: color-mix(in srgb, var(--sl-color-gray-5) 35%, transparent);
+}
+
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover,
+.sidebar-content a[aria-current='page']:focus {
+  font-weight: 600;
+  color: var(--sl-color-black);
+  background-color: var(--sl-color-white);
+}
+
+.starlight-aside {
+  border-radius: 0.5rem;
+}
+
+/* Notes are neutral, like the app's informational surfaces. */
+.starlight-aside--note {
+  --sl-color-asides-text-accent: var(--sl-color-gray-1);
+  --sl-color-asides-border: var(--sl-color-gray-4);
+  background-color: color-mix(in srgb, var(--sl-color-gray-5) 25%, transparent);
+}
+
+/* Green marks positive states in the app (success, stealth toggle). */
+.starlight-aside--tip {
+  --sl-color-asides-text-accent: var(--gondi-green);
+  --sl-color-asides-border: var(--gondi-green);
+  background-color: color-mix(in srgb, var(--gondi-green) 8%, transparent);
+}
+
+/* Orange is the app's attention color, so it stays for cautions only. */
+.starlight-aside--caution {
+  --sl-color-asides-text-accent: var(--gondi-orange);
+  --sl-color-asides-border: var(--gondi-orange);
+  background-color: color-mix(in srgb, var(--gondi-orange) 8%, transparent);
+}
+
+/* Pagination buttons as the app's pill outline buttons. */
+.pagination-links > a {
+  border-radius: 999px;
+  border-color: var(--sl-color-gray-5);
+  box-shadow: none;
+}
+
+.pagination-links > a:hover {
+  border-color: var(--sl-color-gray-3);
+}
