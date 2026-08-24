@@ -64,10 +64,6 @@ An NFT is listed for 10 ETH on OpenSea. A lender has a 25,000 USDC loan offer av
 * **Slippage protection** — Built-in price oracle validation ensures fair conversion rates
 * **Standard fees** — No additional fees for cross-currency conversion; standard Purchase Bundler fees apply
 
-### Cross Currency Contract
-
-`0xc10472AC1BF9F2E58Ff2C83596b4535334c90814`
-
 ***
 
 ## Supported Marketplaces
