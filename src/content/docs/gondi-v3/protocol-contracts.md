@@ -105,4 +105,4 @@ Chain ID `4663` · Explorer: [robinhoodchain.blockscout.com](https://robinhoodch
 
 ## Source Code
 
-The protocol contracts are open source: [github.com/gondixyz/florida-contracts](https://github.com/gondixyz/florida-contracts). The TypeScript SDK lives at [github.com/gondixyz/gondi-js](https://github.com/gondixyz/gondi-js).
+The TypeScript SDK is open source: [github.com/gondixyz/gondi-js](https://github.com/gondixyz/gondi-js).

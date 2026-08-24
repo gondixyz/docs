@@ -6,7 +6,7 @@ draft: true
 
 ## Pool Collections vs Whitelisted Collections
 
-GONDI Pools provide liquidity to a limited number of NFT collections, namely[ Pool Collections](/content-with-pools/gondi-pools/parameters-for-offers/#pool-collections-and-parameters). Pool collections are not the same as Whitelisted collections. [Whitelisted Collections](/gondi-v3/whitelisted-collections/) support P2P loans, while Pool Collections get offers from GONDI pools. All Pool Collections also support P2P offers.
+GONDI Pools provide liquidity to a limited number of NFT collections, namely[ Pool Collections](/content-with-pools/gondi-pools/parameters-for-offers/#pool-collections). Pool collections are not the same as Whitelisted collections. [Whitelisted Collections](/gondi-v3/whitelisted-collections/) support P2P loans, while Pool Collections get offers from GONDI pools. All Pool Collections also support P2P offers.
 
 All offers from both GONDI Pools have Max Senior Repayment set to 0, having repayment priority in case of default. GONDI Pools offers compete against other loan offers set by individuals with no priority.  Pool offers do not include an origination fee either.
 
