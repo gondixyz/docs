@@ -68,10 +68,11 @@ contract is deployed or rotated.
 
 ## Deployment
 
-`bun run build` produces a fully static `dist/` that can be served from any
-static host (Vercel, Cloudflare Pages, S3 + CloudFront, …). The `site` option in
-`astro.config.mjs` is `https://docs.gondi.xyz`; point that hostname at the
-deployed build to complete the GitBook cutover.
+The site is hosted on GitHub Pages. Every push to `main` runs
+`.github/workflows/deploy.yml`, which builds `dist/` and publishes it to the
+`github-pages` environment. The custom domain is `public/CNAME`
+(`docs.gondi.xyz`, a DNS `CNAME` to `gondixyz.github.io`) and matches the
+`site` option in `astro.config.mjs`.
 
 ## Notes
 
