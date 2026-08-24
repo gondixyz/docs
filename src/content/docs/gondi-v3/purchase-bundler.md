@@ -88,4 +88,4 @@ Purchase Bundler transactions are supported across the following platforms:
 
 ## Fees
 
-The buyer pays a 2% Purchase Bundler fee on most transactions. See [Protocol Fees](http://localhost:8080/gondi-v3/protocol-fees) for the complete fee schedule by marketplace and listing type.
+The buyer pays a 2% Purchase Bundler fee on most transactions. See [Protocol Fees](/gondi-v3/protocol-fees) for the complete fee schedule by marketplace and listing type.

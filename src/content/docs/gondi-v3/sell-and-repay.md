@@ -70,7 +70,7 @@ When a sale completes:
 
 1. Buyer pays the purchase price
 2. Outstanding loan (principal + accrued interest) is repaid to the lender
-3. Protocol fee is deducted (see [Protocol Fees](http://localhost:8080/gondi-v3/protocol-fees))
+3. Protocol fee is deducted (see [Protocol Fees](/gondi-v3/protocol-fees))
 4. Remaining surplus is sent to the borrower
 
 ### Example
