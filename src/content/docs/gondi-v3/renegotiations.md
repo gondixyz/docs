@@ -8,6 +8,8 @@ title: "Renegotiations"
 
 Renegotiation lets any lender propose new terms for a borrower's existing loan - like extending the due date, changing the APR, or adjusting the principal. **Unlike refinancing, the borrower must approve** because terms might not always be better.
 
+Loans funded by a **Private Offer** cannot be renegotiated at all: no new terms, no top-ups and no added tranches. See [Offer Options](/gondi-v3/loan-offers/#offer-options).
+
 ## Refinancing vs Renegotiation - Key Differences
 
 | Refinancing                                 | Renegotiatio                            |
