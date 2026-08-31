@@ -56,7 +56,7 @@ Two optional switches change who can interact with an offer. Both are set when t
 * The borrower keeps every option on their side: they can repay at any time, or refinance out by accepting a new offer. In that case the new principal is paid to the borrower, who repays the private lender.
 * A Private Offer funds the whole loan on its own: it cannot be combined with other offers, so the loan is always single-tranche and Senior Tolerance does not apply.
 * Default handling is unchanged. If the loan defaults, the usual claim, buyout and auction rules apply.
-* Offers made by GONDI Pools cannot be private.
+* The protocol fee on the lender's interest is **20%** for private loans, instead of the standard 15%.
 
 Offers carrying either option are flagged with an icon in the offer list.
 
