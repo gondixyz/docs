@@ -44,7 +44,7 @@ description: "This glossary defines key terms used in GONDI's dApp."
 
 **Principal** The amount of WETH or USDC borrowed/lent.
 
-**Private Offer** A loan offer whose loans cannot be refinanced, renegotiated or topped up by any lender. The borrower can still repay or refinance out by taking a new offer.
+**Private Offer** A loan offer whose loans cannot be refinanced or topped up by any lender. The borrower can still repay or renegotiate out by taking a new offer.
 
 **Reserved Offer** A loan offer that names a single borrower and is visible only to them.
 

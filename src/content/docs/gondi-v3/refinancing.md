@@ -37,7 +37,7 @@ Refinancing lets any lender take over your existing loan by offering significant
 * First 15% of remaining loan duration
 * Last 15% of remaining loan duration
 
-**Loans funded by a Private Offer can never be refinanced**, at any point in the loan. The lender disabled refinancing when creating the offer — see [Offer Options](/gondi-v3/loan-offers/#offer-options). The borrower can still repay, or refinance out by accepting a new offer.
+**Loans funded by a Private Offer can never be refinanced**, at any point in the loan. The lender disabled refinancing when creating the offer — see [Offer Options](/gondi-v3/loan-offers/#offer-options). The borrower can still repay, or renegotiate out by accepting a new offer.
 
 **Lock-up resets**: Each time your loan gets refinanced, the 15% lock-up periods restart based on the remaining duration.
 
