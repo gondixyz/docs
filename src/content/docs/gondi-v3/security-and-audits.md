@@ -9,6 +9,12 @@ All deployed GONDI contracts have been audited. The reports are listed below by 
 
 If you believe you have found an exploit, no matter how small, please contact us on [Discord](https://discord.gg/gondi) by creating a private ticket. Security is our top priority and we reward users who find bugs according to the severity of the finding.
 
+## GONDI V3.2
+
+| Audit | Auditor | Report |
+| --- | --- | --- |
+| Lender Refinance | Zenith | [PDF](/files/gondi-v3.2-zenith-lender-refinance-audit.pdf) |
+
 ## GONDI V3.1
 
 | Audit | Auditor | Report |
