@@ -8,12 +8,15 @@ GONDI charges fees on specific protocol operations. Below is the complete fee sc
 
 ## Lender Fees
 
-| Fee Type                          | Rate |
-| --------------------------------- | ---- |
-| Protocol fee on realized interest | 15%  |
-| Protocol fee on origination fees  | 15%  |
+| Fee Type                                        | Rate |
+| ----------------------------------------------- | ---- |
+| Protocol fee on realized interest               | 15%  |
+| Protocol fee on origination fees                | 15%  |
+| Protocol fee on realized interest, private loans | 20%  |
 
 Protocol fees are charged on realized interest and origination fees — not on the loan principal itself. If a loan defaults, only origination fees are charged.
+
+Loans funded by a Private Offer carry a 20% fee on realized interest — see [Offer Options](/gondi-v3/loan-offers/#offer-options).
 
 > Effective starting October 24th, 2025.
 
