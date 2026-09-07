@@ -1,0 +1,32 @@
+---
+/** Starlight's own id for the page heading, kept so its scroll/anchor logic still finds it. */
+const PAGE_TITLE_ID = '_top';
+
+/**
+ * Adds the page description back under the title as a subtitle, the way GitBook
+ * rendered it. Starlight's stock PageTitle keeps the description in metadata
+ * only, which silently dropped the lead sentence of pages that carry one.
+ */
+const { entry } = Astro.locals.starlightRoute;
+const { title, description } = entry.data;
+---
+
+<h1 id={PAGE_TITLE_ID}>{title}</h1>
+{description && <p class="page-subtitle">{description}</p>}
+
+<style>
+  h1 {
+    margin-top: 1rem;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .page-subtitle {
+    margin-top: 0.5rem;
+    font-size: var(--sl-text-lg);
+    line-height: 1.5;
+    color: var(--sl-color-gray-3);
+  }
+</style>
