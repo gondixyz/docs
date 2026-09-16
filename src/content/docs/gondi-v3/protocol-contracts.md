@@ -48,8 +48,9 @@ Chain ID `1` · Explorer: [etherscan.io](https://etherscan.io)
 | Auction Loan Liquidator | V2 | [`0x97D34635b605C2F1630D6b4c6C5D222B8a2ca47D`](https://etherscan.io/address/0x97D34635b605C2F1630D6b4c6C5D222B8a2ca47D) |
 | Auction Loan Liquidator | V1 | [`0x237e4421C742d843Fdd96D22294D338507e17091`](https://etherscan.io/address/0x237e4421C742d843Fdd96D22294D338507e17091) |
 | Liquidation Distributor | V3.2 | [`0x1C495e474C63B5B095173ca0bd9DE1B9F002D75d`](https://etherscan.io/address/0x1C495e474C63B5B095173ca0bd9DE1B9F002D75d) |
+| Liquidation Distributor | V3.0 / V3.1 | [`0x6E9122DF87bFE08648aE4b77e97ce77D91b198Be`](https://etherscan.io/address/0x6E9122DF87bFE08648aE4b77e97ce77D91b198Be) |
 | Liquidation Distributor | V2 | [`0xeDFbeE5E877EB02307e9c9e40be4E440e52f51C5`](https://etherscan.io/address/0xeDFbeE5E877EB02307e9c9e40be4E440e52f51C5) |
-| Liquidation Distributor | V1 | [`0x6E9122DF87bFE08648aE4b77e97ce77D91b198Be`](https://etherscan.io/address/0x6E9122DF87bFE08648aE4b77e97ce77D91b198Be) |
+| Liquidation Distributor | V1 | [`0x237e4421C742d843Fdd96D22294D338507e17091`](https://etherscan.io/address/0x237e4421C742d843Fdd96D22294D338507e17091) |
 | Currency Manager | V1, V2 & V3 | [`0x4150deD32A6D3bfecAE76e7558Af480190344927`](https://etherscan.io/address/0x4150deD32A6D3bfecAE76e7558Af480190344927) |
 | Collection Manager | V1, V2 & V3 | [`0x52Ac424eF7B283aA5bADB8c6254832E3280d7398`](https://etherscan.io/address/0x52Ac424eF7B283aA5bADB8c6254832E3280d7398) |
 | Address Method Manager | V3 & V3.2 | [`0x4eCC15Ded6E2EB38cCE6B0bD0bb0E417813F8f09`](https://etherscan.io/address/0x4eCC15Ded6E2EB38cCE6B0bD0bb0E417813F8f09) |
