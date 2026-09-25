@@ -78,23 +78,54 @@
 }
 
 :root {
-  --sl-text-h1: 2.25rem;
-  --sl-text-h2: 1.625rem;
-  --sl-text-h3: 1.25rem;
-  --sl-text-h4: 1.0625rem;
   --sl-content-width: 46rem;
+}
+
+/*
+ * GONDI app type scale (frontend/src/pages/globals.css): headlines at weight 500 with tight
+ * line heights, paragraph-large for running text, body-medium/small for chrome. Unlayered, so
+ * these also win over Starlight's larger desktop heading sizes.
+ */
+:root {
+  --sl-text-h1: 2rem; /* headline-large 32/36 */
+  --sl-text-h2: 1.5rem; /* headline-small 24/26 */
+  --sl-text-h3: 1.25rem; /* headline-xsmall 20/22 */
+  --sl-text-h4: 1rem; /* body-large-strong 16/18 */
+  --sl-text-h5: 1rem; /* body-large-strong 16/18 */
+  --sl-text-lg: 1rem; /* body-large 16/18 */
+  --sl-text-sm: 0.875rem; /* body-medium 14/16 */
+  --sl-text-xs: 0.75rem; /* body-small 12/14 */
+  --sl-line-height: 1.5; /* paragraph-large 16/24 */
+}
+
+body {
+  letter-spacing: 0.01em;
 }
 
 .site-title img {
   height: 1.5rem;
 }
 
-.sl-markdown-content h1,
-.sl-markdown-content h2,
-.sl-markdown-content h3,
-.sl-markdown-content h4 {
-  font-weight: 600;
-  letter-spacing: 0.01em;
+h1#_top,
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 500;
+}
+
+h1#_top,
+.sl-markdown-content h1 {
+  line-height: 2.25rem;
+}
+
+.sl-markdown-content h2 {
+  line-height: 1.625rem;
+}
+
+.sl-markdown-content h3 {
+  line-height: 1.375rem;
+}
+
+.sl-markdown-content :is(h4, h5, h6) {
+  line-height: 1.125rem;
 }
 
 /* Links read like the app's: same color as the text, plain underline. */
