@@ -51,7 +51,7 @@ Two optional switches change who can interact with an offer. Both are set when t
 
 **Reserved Offer**: the offer names a single borrower and is visible only to them. Nobody else can take it.
 
-**Private Offer**: loans funded by the offer cannot be refinanced. No other lender can refinance the loan, or add a tranche to it — the lender who funds it stays the only lender until the loan is repaid or renegotiated.
+**Private Offer** (GONDI V3.2, Ethereum only): loans funded by the offer cannot be refinanced. No other lender can refinance the loan, or add a tranche to it — the lender who funds it stays the only lender until the loan is repaid or renegotiated.
 
 * The borrower keeps every option on their side: they can repay at any time, or renegotiate out by accepting a new offer. In that case the new principal is paid to the borrower, who repays the private lender.
 * A Private Offer funds the whole loan on its own: it cannot be combined with other offers, so the loan is always single-tranche and Senior Tolerance does not apply.

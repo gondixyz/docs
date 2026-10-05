@@ -37,8 +37,6 @@ Refinancing lets any lender take over your existing loan by offering significant
 * First 15% of remaining loan duration
 * Last 15% of remaining loan duration
 
-**Loans funded by a Private Offer can never be refinanced**, at any point in the loan. The lender disabled refinancing when creating the offer — see [Offer Options](/gondi-v3/loan-offers/#offer-options). The borrower can still repay, or renegotiate out by accepting a new offer.
-
 **Lock-up resets**: Each time your loan gets refinanced, the 15% lock-up periods restart based on the remaining duration.
 
 **Example**:
@@ -46,6 +44,14 @@ Refinancing lets any lender take over your existing loan by offering significant
 * Original loan: 30 days
 * Lock-up periods: First 4.5 days and last 4.5 days
 * If refinanced on day 10: New lock-up for 15% of remaining 20 days = 3 days
+
+## Private Offers (GONDI V3.2)
+
+GONDI V3.2 adds **Private Offers**: a lender can disable refinancing when creating an offer — see [Offer Options](/gondi-v3/loan-offers/#offer-options).
+
+* **Loans funded by a Private Offer can never be refinanced**, at any point in the loan. No lender can refinance them, in full or in part.
+* The borrower can still repay, or renegotiate out by accepting a new offer.
+* Private Offers are available on Ethereum, where their loans live on the [Multi Source Loan V3.2](/gondi-v3/protocol-contracts/#ethereum) contract. Every other offer keeps the refinancing rules above.
 
 ## Refinancing Example
 

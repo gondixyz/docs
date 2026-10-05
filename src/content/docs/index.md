@@ -16,7 +16,7 @@ The protocol supports standard bids, multi-item bids, trait and multi-trait bids
 
 ## Lending
 
-GONDI is a peer-to-peer NFT lending protocol with pro-rata interest, instant refinancing, and partial (tranche) refinancing. V3.1 introduces Tranche Seniority for risk segmentation across loan tranches.
+GONDI is a peer-to-peer NFT lending protocol with pro-rata interest, instant refinancing, and partial (tranche) refinancing. V3.1 introduces Tranche Seniority for risk segmentation across loan tranches, and V3.2 adds Private Offers for lenders who want to keep a loan to themselves.
 
 ## V3.1 Features
 
@@ -24,6 +24,13 @@ GONDI is a peer-to-peer NFT lending protocol with pro-rata interest, instant ref
 * **Tranche Seniority.** Lenders can refinance a portion of an outstanding loan with defined seniority, enabling more granular risk pricing.
 * **Stealth Bidding.** Bids are visible only to the owner of the targeted NFT. Bidder identity and balance are not exposed on-chain or in the UI.
 * **Sell & Repay.** Borrowers can sell escrowed collateral in a single transaction. Outstanding loan principal and accrued interest are repaid; any surplus is transferred to the borrower.
+
+## V3.2 Features
+
+* **Private Offers.** Lenders can disable refinancing when creating an offer. Loans funded by a Private Offer can never be refinanced or topped up by another lender; the borrower can still repay or renegotiate out by accepting a new offer. See [Offer Options](/gondi-v3/loan-offers/#offer-options) and [Refinancing](/gondi-v3/refinancing/#private-offers-gondi-v32).
+* **Single-tranche private loans.** A Private Offer funds the whole loan on its own, so Senior Tolerance does not apply.
+* **Private loan fee.** The protocol fee on the lender's realized interest is 20% for private loans, instead of the standard 15%. See [Protocol Fees](/gondi-v3/protocol-fees/).
+* **Availability.** GONDI V3.2 is deployed on Ethereum mainnet only, alongside V3.1 — see [Protocol Contracts](/gondi-v3/protocol-contracts/#ethereum). Offers without the Private Offer option keep working as before.
 
 :::note
 **GONDI V1 & GONDI V2 Outstanding Loans: No action needed.** 
