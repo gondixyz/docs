@@ -50,6 +50,13 @@ export default defineConfig({
       credits: false,
       sidebar: [
         {
+          label: 'GONDI V3.2',
+          items: [
+            v3('gondi-v3-2'),
+            { label: 'Private Offers', link: '/gondi-v3/loan-offers/#offer-options' },
+          ],
+        },
+        {
           label: 'GONDI V3.1',
           items: [
             { label: 'Introducing GONDI', link: '/' },
