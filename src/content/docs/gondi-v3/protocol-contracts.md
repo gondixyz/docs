@@ -23,6 +23,8 @@ Only interact with the addresses listed here. GONDI never asks you to approve to
 | Price Quoter Manager / Price Quoter | Whitelist of price quoters and the Uniswap V3 TWAP quoter used for cross-currency conversions. |
 | Range Validator | Validates collection offers across a range of token IDs, enabling collection offers for specific Art Blocks collections (Fidenzas, Chromie Squiggles, …). |
 | Multi Address Validator | Validates collection offers that span several collection contracts. |
+| NFT Bit Vector Validator | Validates offers on an arbitrary set of token IDs in a collection, given as a bitmap with one bit per token ID. |
+| NFT Packed List Validator | Validates offers on an arbitrary set of token IDs in a collection, given as a sorted list of token IDs. |
 | User Vault | Factory of user vaults that bundle several NFTs (or ERC-1155s) into a single piece of collateral. |
 | Stash | Wrapper that makes non-compliant ERC-721s (for example the original SuperRare contract) usable as collateral. |
 | Position Migrator | Moves loans from older escrow contracts to the latest one via flash loan. |
@@ -63,6 +65,10 @@ Chain ID `1` · Explorer: [etherscan.io](https://etherscan.io)
 | Range Validator | V1 | [`0x18905fc7F3AaB462394F45B69308509a6b75573b`](https://etherscan.io/address/0x18905fc7F3AaB462394F45B69308509a6b75573b) |
 | Multi Address Validator | V3.2 | [`0xff4313861B89E8de771CfF06466864d8CfC26d65`](https://etherscan.io/address/0xff4313861B89E8de771CfF06466864d8CfC26d65) |
 | Multi Address Validator | V3.1 | [`0xDDCE55Af28FCD6C3F5C9A35D5a0aDa9c8f103aa0`](https://etherscan.io/address/0xDDCE55Af28FCD6C3F5C9A35D5a0aDa9c8f103aa0) |
+| NFT Bit Vector Validator | V3.2 | [`0xeB38E2Dc3Bf2E62a67F22E2C320A5ba5B782b3F8`](https://etherscan.io/address/0xeB38E2Dc3Bf2E62a67F22E2C320A5ba5B782b3F8) |
+| NFT Bit Vector Validator | V3.1 | [`0xbfDd6A192A58e4Ac08B043257238DBda9C6307e3`](https://etherscan.io/address/0xbfDd6A192A58e4Ac08B043257238DBda9C6307e3) |
+| NFT Packed List Validator | V3.2 | [`0x45A35001a0F563c20923b159EF716A6179725aeE`](https://etherscan.io/address/0x45A35001a0F563c20923b159EF716A6179725aeE) |
+| NFT Packed List Validator | V3.1 | [`0x53e6986a1ee09ca46f0a7419Bc2aA34a19dd97b4`](https://etherscan.io/address/0x53e6986a1ee09ca46f0a7419Bc2aA34a19dd97b4) |
 | User Vault | V2 / V3 | [`0x823dE2c44369e94CAc3DA789Ad4b6493e27e4Bfe`](https://etherscan.io/address/0x823dE2c44369e94CAc3DA789Ad4b6493e27e4Bfe) |
 | User Vault | V1 | [`0x14a6Dcebb2Bb73aae1b199CCAadA75247b81976D`](https://etherscan.io/address/0x14a6Dcebb2Bb73aae1b199CCAadA75247b81976D) |
 | Stash (SuperRare wrapper) | Active since 12/05/2024 | [`0xc0ec4e4ba06dfb2dfaf21a69fc78310d80fc5497`](https://etherscan.io/address/0xc0ec4e4ba06dfb2dfaf21a69fc78310d80fc5497) |
@@ -85,6 +91,8 @@ Chain ID `999` · Explorer: [hyperevmscan.io](https://hyperevmscan.io)
 | Marketplace Manager | V3.1 | [`0x51dC8df5c17c2b7bD458fe758C2c322D739492fa`](https://hyperevmscan.io/address/0x51dC8df5c17c2b7bD458fe758C2c322D739492fa) |
 | Range Validator | V3.1 | [`0x7545487a4749ab4a7c16f9185d574d5668220048`](https://hyperevmscan.io/address/0x7545487a4749ab4a7c16f9185d574d5668220048) |
 | Multi Address Validator | V3.1 | [`0x7d60c8350267ff6d42741177056051d897cbb40e`](https://hyperevmscan.io/address/0x7d60c8350267ff6d42741177056051d897cbb40e) |
+| NFT Bit Vector Validator | V3.1 | [`0x81DB3A11bBDac721c5A9E20DB930F6D39fED783B`](https://hyperevmscan.io/address/0x81DB3A11bBDac721c5A9E20DB930F6D39fED783B) |
+| NFT Packed List Validator | V3.1 | [`0x6b1A4586432B6De529b1FdE2133c5d09cb20A644`](https://hyperevmscan.io/address/0x6b1A4586432B6De529b1FdE2133c5d09cb20A644) |
 | User Vault | V2 / V3 | [`0x3f26ff30061d5a6777a01d7843b5f2b81f60a7ee`](https://hyperevmscan.io/address/0x3f26ff30061d5a6777a01d7843b5f2b81f60a7ee) |
 | Loan Manager | V3.1 | [`0x97bA36bE389944f499495493A2246A96E55866D7`](https://hyperevmscan.io/address/0x97bA36bE389944f499495493A2246A96E55866D7) |
 | Fee Collector | — | [`0xBc0b9C63dC0581278d4b554AF56858298BF2a9eC`](https://hyperevmscan.io/address/0xBc0b9C63dC0581278d4b554AF56858298BF2a9eC) |
@@ -106,6 +114,8 @@ Chain ID `4663` · Explorer: [robinhoodchain.blockscout.com](https://robinhoodch
 | Uniswap Price Quoter | V3.1 | [`0x759da3412893D1a627ef5aFCad53b191A254243a`](https://robinhoodchain.blockscout.com/address/0x759da3412893D1a627ef5aFCad53b191A254243a) |
 | Range Validator | V3.1 | [`0x00c361f94f170B3239c8F3ed68d7915C0C43de4C`](https://robinhoodchain.blockscout.com/address/0x00c361f94f170B3239c8F3ed68d7915C0C43de4C) |
 | Multi Address Validator | V3.1 | [`0xB81a14cE55Fbc5B40bcB3D8F9086f0DD219eaFc5`](https://robinhoodchain.blockscout.com/address/0xB81a14cE55Fbc5B40bcB3D8F9086f0DD219eaFc5) |
+| NFT Bit Vector Validator | V3.1 | [`0xf9a57142E235406a9f846ef04e85C7EaAc5c8376`](https://robinhoodchain.blockscout.com/address/0xf9a57142E235406a9f846ef04e85C7EaAc5c8376) |
+| NFT Packed List Validator | V3.1 | [`0xa051CeB450d43fa35A6b677458f91d907b3D68E8`](https://robinhoodchain.blockscout.com/address/0xa051CeB450d43fa35A6b677458f91d907b3D68E8) |
 | User Vault | V2 / V3 | [`0xcf0DF26aE14D132084E95EE8a9426d53eb027cb7`](https://robinhoodchain.blockscout.com/address/0xcf0DF26aE14D132084E95EE8a9426d53eb027cb7) |
 | Loan Manager Registry | V3.1 | [`0x342dFE0756a452714Fd07819a63e64f43F4505F0`](https://robinhoodchain.blockscout.com/address/0x342dFE0756a452714Fd07819a63e64f43F4505F0) |
 | Fee Collector | — | [`0xf9b6B3dD83f2d046Ef028CBB2c5E91B33aaf2cd3`](https://robinhoodchain.blockscout.com/address/0xf9b6B3dD83f2d046Ef028CBB2c5E91B33aaf2cd3) |
