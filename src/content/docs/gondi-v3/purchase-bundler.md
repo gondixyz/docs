@@ -29,17 +29,19 @@ Applicable marketplace and Purchase Bundler fees increase the upfront cost. Revi
 
 A listing's payment currency, the loan currency and any conversion of your upfront payment are separate parts of a transaction. An ETH listing financed by a WETH loan is not the same as a listing priced in WETH.
 
-For an NFT **not already in a loan**, the current app supports these currency combinations, subject to an eligible listing and executable loan offer:
+For an NFT **not already in a loan**, the current app's currency rules differ by purchase route. Each route still needs an eligible listing and executable loan offer:
 
-| Chain | Listing currency | Loan currency | Buy with Loan |
+| Chain | Listing currency | Loan currency | Available route |
 | --- | --- | --- | --- |
-| Ethereum | ETH | WETH | Supported |
-| Ethereum | USDC | USDC | Supported |
-| Ethereum | WETH | — | Not currently enabled for this flow |
-| HyperEVM | HYPE | WHYPE | Supported |
-| Robinhood Chain | ETH | WETH | Supported |
+| Ethereum | ETH | WETH | Standard item and collection purchases; eligible featured listings |
+| Ethereum | WETH | WETH | Eligible featured listings; not the standard item and collection financing route |
+| Ethereum | USDC | USDC | Standard item and collection purchases; not featured financing |
+| HyperEVM | HYPE | WHYPE | Standard item and collection purchases |
+| Robinhood Chain | ETH | WETH | Standard item and collection purchases |
 
-Other listing currencies are not enabled for this flow. The presence of a listing or a supported token in the Currency Manager does not guarantee that it can be purchased with a loan.
+Featured financing pairs listings with loans in the chain's wrapped native currency. In particular, its Ethereum route accepts ETH or WETH listings with WETH loans, but not USDC financing. A WETH listing can therefore be financeable through a featured offer even though the standard item and collection flow does not expose that route.
+
+The presence of a listing or a supported token in the Currency Manager does not guarantee financing through every purchase route. Review the executable offer and transaction quote for the particular listing.
 
 ## Cross Currency & USDC Purchase Bundler
 
@@ -51,7 +53,7 @@ Cross-currency bid acceptance when selling collateral is a separate transaction 
 
 ## Buying an NFT Already in a Loan
 
-Buying collateral with a new loan also needs to repay the seller's existing loan and release the NFT into the buyer's loan escrow. The app supports this flow on Ethereum for eligible V3.1 and V3.2 seller loans. The quoted route must support the listing, seller loan and new buyer loan together.
+Buying collateral with a new loan also needs to repay the seller's existing loan and release the NFT into the buyer's loan escrow. The standard item and collection flow supports eligible V3.1 and V3.2 seller loans on Ethereum. The quoted route must support the listing, seller loan and new buyer loan together.
 
 This flow is not available on HyperEVM or Robinhood Chain. The ordinary-listing currency table above does not establish eligibility for a collateralized listing.
 
