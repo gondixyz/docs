@@ -16,7 +16,9 @@
     "check": "astro check",
     "fmt": "prettier --write .",
     "fmt-check": "prettier --check .",
-    "verify": "bun run check && bun run fmt-check && bun run build"
+    "docs:collections": "bun scripts/refresh-collections.ts",
+    "test": "bun test scripts/",
+    "verify": "bun run test && bun run check && bun run fmt-check && bun run build"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.7",
