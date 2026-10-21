@@ -15,7 +15,7 @@ Create loan offers by setting:
 * **Duration**: How long borrowers have to repay
 * **Origination Fee**: Optional upfront fee
 
-You can make offers on specific NFTs or entire collections.
+Target an NFT, collection or selected traits.
 
 ### Getting Loans (Borrowers)
 
@@ -74,6 +74,16 @@ Offers carrying either option are flagged with an icon in the offer list.
 
 * You offer max 5 WETH per loan with 50 WETH capacity
 * This supports 10 full loans **or** 20 half-loans OR any combination
+
+### Trait Loan Offers
+
+Lend only against NFTs with traits you choose. Each NFT must match **all** your choices.
+
+* Choose up to 10 different trait types from one supported ERC-721 collection.
+* Set your loan terms and a total lending budget shared across matching NFTs.
+* The matching NFTs are fixed when you create the offer. Later mints or trait changes do not update it.
+
+CryptoPunks and wrapped CryptoPunks are not supported.
 
 ### Competitive Improvements
 

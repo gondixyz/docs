@@ -15,6 +15,11 @@ matter when an agent edits this repository.
 
 ## Content Rules
 
+- Write for nontechnical users: what they can do, costs and practical limits.
+  Use plain language; omit encoding limits, validator internals and internal labels.
+  State each rule once, briefly. Skip UI-only features.
+- Distinguish deployed contract capabilities from transactions currently available
+  in the app. Verify currency, token-standard and chain restrictions per flow.
 - One Markdown file per page under `src/content/docs/`; the path is the URL.
   Keep existing URLs stable — the GONDI app ([gondi.xyz](https://gondi.xyz)) and
   external sites deep-link into the docs. Removing or renaming a page requires

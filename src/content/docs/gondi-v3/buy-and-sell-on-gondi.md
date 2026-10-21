@@ -13,6 +13,10 @@ Gondi aggregates listings from across the ecosystem so you can browse, compare, 
 * **CryptoPunks listings**
 * **Tokenworks**
 
+## ERC-1155 Trading
+
+[Buy, list or bid on one ERC-1155 unit](/gondi-v3/erc-1155-trading/) without a vault.
+
 ## Selling on Gondi
 
 **Standard Listings**
@@ -43,7 +47,17 @@ Bid on exactly the attributes you want. Target specific traits (e.g., any Crypto
 
 **Edition Bidding**
 
-Place buy bids on ERC-721 editions.
+Bid on ERC-721 copies of a supported edition. Choose your price, expiration and how many copies to buy. Bid on ERC-1155 editions individually.
+
+### Offers Across an Artist's Works
+
+Bid on up to **50 selected ERC-721 works** by one artist across collections on the same chain, including 1/1s and edition copies.
+
+* Sign once to place separate bids, each with its own price. Choose one currency and expiration.
+* All bids can be accepted; budget for their combined price plus fees.
+* Funds stay in your wallet until a seller accepts. Keep enough funds and approve spending.
+* Excludes ERC-1155s and works owned or used for loans by you or your linked wallets.
+* Only selected works are included; future mints are not.
 
 ## Fee & Royalty Configuration
 

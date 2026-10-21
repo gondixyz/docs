@@ -5,6 +5,8 @@ description: "Addresses of the GONDI smart contracts deployed on Ethereum, Hyper
 
 All GONDI contracts are verified on the block explorer of each chain. The contracts that matter for most integrations are **Multi Source Loan** (loans), **Purchase Bundler** (trading, Sell & Repay) and the **Auction Loan Liquidator** (defaults).
 
+Use the deployment for your chain: [Ethereum](#ethereum), [HyperEVM](#hyperevm) or [Robinhood](#robinhood-chain). NFT addresses are in the [collection directory](/gondi-v3/whitelisted-collections/).
+
 :::caution
 Only interact with the addresses listed here. GONDI never asks you to approve tokens or NFTs to any other contract.
 :::
@@ -100,6 +102,8 @@ Chain ID `999` · Explorer: [hyperevmscan.io](https://hyperevmscan.io)
 ## Robinhood Chain
 
 Chain ID `4663` · Explorer: [robinhoodchain.blockscout.com](https://robinhoodchain.blockscout.com)
+
+GONDI V3.1. See [supported collections and NFT contracts](/gondi-v3/whitelisted-collections/#robinhood-chain). V3.2 Private Offers remain Ethereum-only.
 
 | Contract | Version | Address |
 | --- | --- | --- |
