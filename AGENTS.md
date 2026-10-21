@@ -42,5 +42,8 @@ matter when an agent edits this repository.
 
 - `astro` is pinned to `~7.1`: Starlight asides did not render on 7.2.x. After
   bumping, confirm `dist/index.html` contains `starlight-aside`.
+- `starlight-llms-txt` (`/llms.txt`, `/llms-full.txt`, `/llms-small.txt`) is
+  pinned to `0.11.0`: `0.12.0` depends on `@astrojs/mdx` 8, which needs Astro
+  `^7.2.10`. Bump it together with `astro`. It already skips `draft: true` pages.
 - The site is fully static (`dist/`). There is no backend and no runtime data
   fetching; anything dynamic belongs in the frontend app, not here.

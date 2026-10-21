@@ -1,5 +1,6 @@
 import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
+import starlightLlmsTxt from 'starlight-llms-txt';
 
 const SITE = 'https://docs.gondi.xyz';
 
@@ -13,6 +14,33 @@ const redirects = {
   '/connect': '/connect/official-links',
   '/gondi-v1-and-v2': '/gondi-v1-and-v2/gondi-v2',
 };
+
+/**
+ * Serves `/llms.txt`, `/llms-full.txt` and `/llms-small.txt` (https://llmstxt.org/) so language
+ * models and agents can read the docs as plain Markdown. The plugin already leaves out
+ * `draft: true` pages; previous protocol versions sort last and stay out of the small file.
+ */
+const llmsTxt = starlightLlmsTxt({
+  projectName: 'GONDI',
+  description:
+    'GONDI is a peer-to-peer NFT liquidity protocol: lenders sign loan offers in ERC-20 tokens, borrowers take them against NFT collateral, and NFTs are bought and sold with or without a loan.',
+  details: [
+    '- The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under `gondi-v1-and-v2/` describe previous versions.',
+    `- Contract addresses for Ethereum, HyperEVM and Robinhood Chain: ${SITE}/gondi-v3/protocol-contracts/`,
+    `- Lending from a script or an AI agent: ${SITE}/gondi-v3/lend-with-an-agent/`,
+    '- Lending data is public: the GraphQL API at https://api.gondi.xyz/graphql answers reads without authentication and supports introspection.',
+  ].join('\n'),
+  optionalLinks: [
+    {
+      label: 'gondi SDK',
+      url: 'https://www.npmjs.com/package/gondi',
+      description: 'TypeScript SDK to lend, borrow and trade on GONDI',
+    },
+    { label: 'gondi SDK reference', url: 'https://gondixyz.github.io/gondi-js/' },
+  ],
+  demote: ['gondi-v1-and-v2/**'],
+  exclude: ['gondi-v1-and-v2/**'],
+});
 
 const v3 = (slug) => `gondi-v3/${slug}`;
 const v2 = (slug) => `gondi-v1-and-v2/gondi-v2/${slug}`;
@@ -48,6 +76,7 @@ export default defineConfig({
       ],
       pagination: true,
       credits: false,
+      plugins: [llmsTxt],
       sidebar: [
         {
           label: 'GONDI V3.2',
@@ -72,6 +101,7 @@ export default defineConfig({
             v3('liquidations-buyouts-and-auctions'),
             v3('vaults-and-stash'),
             v3('protocol-contracts'),
+            v3('lend-with-an-agent'),
             v3('erc-721c-whitelisting'),
             v3('protocol-fees'),
             v3('whitelisted-collections'),

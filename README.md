@@ -115,3 +115,7 @@ The site is hosted on GitHub Pages. Every push to `main` runs
   Astro 7.2.x at the time of writing. Bump once
   `:::note` blocks render again on a newer release (run `bun run build` and
   check that `dist/index.html` contains `starlight-aside`).
+- `starlight-llms-txt`, which generates `/llms.txt`, `/llms-full.txt` and
+  `/llms-small.txt` for language models, is pinned to `0.11.0`: newer releases
+  depend on `@astrojs/mdx` 8, which requires Astro 7.2. Bump it together with
+  `astro`.
