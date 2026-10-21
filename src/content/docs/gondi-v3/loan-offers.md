@@ -15,7 +15,7 @@ Create loan offers by setting:
 * **Duration**: How long borrowers have to repay
 * **Origination Fee**: Optional upfront fee
 
-You can make offers on specific NFTs, entire collections, or NFTs matching selected traits within an eligible collection.
+Target an NFT, collection or selected traits.
 
 ### Getting Loans (Borrowers)
 
@@ -77,18 +77,13 @@ Offers carrying either option are flagged with an icon in the offer list.
 
 ### Trait Loan Offers
 
-**Trait Loan Offers** let a lender set loan terms for the NFTs matching selected traits within one eligible ERC-721 collection. A borrower must supply a matching NFT as collateral; this is an offer to lend, not an offer to purchase the NFT.
+Lend only against NFTs with traits you choose. Each NFT must match **all** your choices.
 
-* Set the principal per loan, APR, duration, expiration, optional origination fee and lending capacity.
-* Select up to 10 supported, discrete-value traits. Numeric range traits are not supported. Multiple selections must use different trait types, and the NFT must match **every** selected trait.
-* Capacity is shared across loans funded by the offer, rather than allocated separately to each matching NFT.
-* Accepting the offer originates a loan under the usual collateral, repayment and liquidation rules.
+* Choose up to 10 different trait types from one supported ERC-721 collection.
+* Set your loan terms and a total lending budget shared across matching NFTs.
+* The matching NFTs are fixed when you create the offer. Later mints or trait changes do not update it.
 
-The eligible token IDs are fixed in the signed offer. GONDI encodes the matching set using an NFT Bit Vector Validator or NFT Packed List Validator; the loan contract checks the collateral token ID against that set when the offer is used. Later mints or metadata changes do not expand an already-signed offer. To lend against a different set, create a new offer.
-
-Offer creation rejects a selection matching more than 20,000 token IDs, or a set that cannot fit either validator encoding within 16 KiB. A narrower trait selection may be needed even within the 10-trait limit.
-
-Trait loan offers require support for the collection, selected traits and loan contract. The app supports eligible collections on V3.1 and V3.2 contracts; CryptoPunks and their wrappers are excluded from this flow. See [Protocol Contracts](/gondi-v3/protocol-contracts/) for the validators deployed on each chain.
+CryptoPunks and wrapped CryptoPunks are not supported.
 
 ### Competitive Improvements
 

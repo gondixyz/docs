@@ -1,81 +1,60 @@
 ---
 title: "Purchase Bundler"
-description: "Buy an NFT with a GONDI loan in one transaction, including supported listing currencies, collateral requirements and settlement limits."
+description: "Buy an NFT with a loan in one transaction. Supported currencies, marketplaces and collateral."
 ---
 
-Purchase Bundler lets you buy an NFT by combining your own funds with an existing GONDI loan offer. In one atomic transaction, the seller is paid, the NFT enters loan escrow, and you become the borrower. Required token approvals may need separate transactions first.
+Buy an NFT with a GONDI loan and pay the rest yourself. The purchase and loan happen in one transaction; wallet approvals may come first.
 
 ## How It Works
 
-1. Find an eligible NFT listing with an executable GONDI loan offer.
-2. Review the loan principal, currency, APR, duration and origination fee, together with the upfront payment and purchase fees.
-3. Approve the required tokens, then execute the purchase. If any part of settlement fails, the purchase and loan creation revert together.
-4. Repay the loan in its loan currency to retrieve the NFT, or use [Sell & Repay](/gondi-v3/sell-and-repay/) where supported.
+1. Choose an eligible listing and funded loan offer on the same chain.
+2. Review terms, approve tokens and pay the balance plus fees.
+3. Repay in the loan currency to recover the NFT, or use [Sell & Repay](/gondi-v3/sell-and-repay/).
 
-The loan's net proceeds are its principal minus the origination fee. Your funds cover the remaining purchase cost and applicable transaction fees.
+**Upfront cost = listing price − loan principal + origination fee + purchase fees.** Gas is additional.
 
 ## Example
 
-An NFT listed for 10 ETH has a 7 WETH loan offer with a 0.20 WETH origination fee, 15% APR and a 90-day term:
+10 ETH listing, 7 WETH loan, 0.20 WETH origination fee:
 
-* **Net loan proceeds:** 6.80 WETH (7 minus 0.20).
-* **Your contribution before purchase fees and gas:** 3.20 WETH equivalent (10 minus 6.80).
-* **Interest over the full term:** approximately 0.26 WETH.
-* **Repayment at maturity:** approximately 7.26 WETH.
-
-Applicable marketplace and Purchase Bundler fees increase the upfront cost. Review the transaction quote for the total; the 3.20 figure is not an all-in purchase quote.
+* Net loan: **6.80 WETH**.
+* You pay: **3.20 ETH equivalent + fees and gas** (ETH/WETH is 1:1).
+* At 15% APR for 90 days: approximately **0.26 WETH interest**, **7.26 WETH repayment**.
 
 ## Supported Currencies
 
-A listing's payment currency, the loan currency and any conversion of your upfront payment are separate parts of a transaction. An ETH listing financed by a WETH loan is not the same as a listing priced in WETH.
+For NFTs **not already used as loan collateral**:
 
-For an NFT **not already in a loan**, the current app's currency rules differ by purchase route. Each route still needs an eligible listing and executable loan offer:
+* **Ethereum:** ETH or WETH prices use WETH loans; USDC prices use USDC loans.
+* **HyperEVM:** HYPE prices use WHYPE loans.
+* **Robinhood Chain:** ETH prices use WETH loans.
 
-| Chain | Listing currency | Loan currency | Available route |
-| --- | --- | --- | --- |
-| Ethereum | ETH | WETH | Standard item and collection purchases; eligible featured listings |
-| Ethereum | WETH | WETH | Eligible featured listings; not the standard item and collection financing route |
-| Ethereum | USDC | USDC | Standard item and collection purchases; not featured financing |
-| HyperEVM | HYPE | WHYPE | Standard item and collection purchases |
-| Robinhood Chain | ETH | WETH | Standard item and collection purchases |
+WETH and WHYPE are the wrapped versions of ETH and HYPE used for loans.
 
-Featured financing pairs listings with loans in the chain's wrapped native currency. In particular, its Ethereum route accepts ETH or WETH listings with WETH loans, but not USDC financing. A WETH listing can therefore be financeable through a featured offer even though the standard item and collection flow does not expose that route.
-
-The presence of a listing or a supported token in the Currency Manager does not guarantee financing through every purchase route. Review the executable offer and transaction quote for the particular listing.
+On Ethereum, **WETH-priced purchases with a loan are available only through featured listings on the homepage**. For **USDC-priced purchases**, use the NFT or collection page; homepage featured listings do not support USDC loans.
 
 ## Cross Currency & USDC Purchase Bundler
 
-The deployed Purchase Bundler contracts can execute supported currency conversions as part of settlement on Ethereum. Contract support is broader than the combinations currently offered by the app.
-
-A USDC listing can use a USDC loan in the app; it does not require an ETH-to-USDC loan conversion. The app currently selects the loan currency from the listing, using the wrapped token for a native-currency listing. Choosing a different buyer-loan currency, such as a USDC loan for an ETH listing, is not currently enabled.
-
-Cross-currency bid acceptance when selling collateral is a separate transaction described under [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
+You cannot choose a different loan currency—for example, a USDC loan for an ETH-priced NFT. Selling an NFT to repay a loan is covered in [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
 
 ## Buying an NFT Already in a Loan
 
-Buying collateral with a new loan also needs to repay the seller's existing loan and release the NFT into the buyer's loan escrow. The standard item and collection flow supports eligible V3.1 and V3.2 seller loans on Ethereum. The quoted route must support the listing, seller loan and new buyer loan together.
+Your purchase repays the seller's loan. The NFT then secures your new loan until you repay it.
 
-This flow is not available on HyperEVM or Robinhood Chain. The ordinary-listing currency table above does not establish eligibility for a collateralized listing.
+Available on Ethereum. NFT and collection pages support eligible V3.1/V3.2 loans; check the purchase quote for available currencies.
 
 ## Supported Marketplaces
 
-Eligible listings can come from:
-
-* **GONDI** — Public and private listings.
-* **OpenSea** — Public and private listings.
-* **CryptoPunks** — Public Punks Marketplace listings. Private Punks Marketplace listings cannot use Buy with Loan directly; the seller must wrap the Punk and list it on GONDI for this flow.
-* **Tokenworks** — NFT Strategy marketplace.
-
-Marketplace support still depends on the listing currency, chain, loan and transfer requirements.
+* **GONDI / OpenSea:** public and private listings.
+* **CryptoPunks:** public Punks Marketplace listings. Private listings require wrapping and relisting on GONDI.
+* **Tokenworks:** NFT Strategy marketplace.
 
 ## Requirements
 
-* An eligible collateral NFT and a valid, funded GONDI loan offer must be available.
-* You must have sufficient funds and approvals for the upfront payment, fees and gas.
-* Listing, loan and Purchase Bundler contracts must support the route on the same chain.
-* ERC-1155 tokens cannot become direct loan collateral; a supported [vault](/gondi-v3/vaults-and-stash/) is required for borrowing against them.
-* Collections with transfer restrictions must permit the contracts involved; see [ERC-721C Whitelisting](/gondi-v3/erc-721c-whitelisting/).
+* Sufficient funds and approvals for the upfront cost and gas.
+* An NFT supported for loans; ERC-1155s require a [vault](/gondi-v3/vaults-and-stash/).
+* Transfers permitted by the collection; see [ERC-721C](/gondi-v3/erc-721c-whitelisting/).
 
 ## Fees
 
-Fees depend on the marketplace, chain and whether the NFT is already in a loan. See [Protocol Fees](/gondi-v3/protocol-fees/) for the fee schedule and review the transaction quote before signing.
+Check the total [fees](/gondi-v3/protocol-fees/) shown before confirming your purchase.

@@ -5,7 +5,7 @@ description: "Addresses of the GONDI smart contracts deployed on Ethereum, Hyper
 
 All GONDI contracts are verified on the block explorer of each chain. The contracts that matter for most integrations are **Multi Source Loan** (loans), **Purchase Bundler** (trading, Sell & Repay) and the **Auction Loan Liquidator** (defaults).
 
-Deployments are listed below for [Ethereum](#ethereum), [HyperEVM](#hyperevm) and [Robinhood Chain](#robinhood-chain). Use the addresses for the chain where the NFT and loan reside; a deployment on one chain does not make its contracts or collateral available on another. The [collection directory](/gondi-v3/whitelisted-collections/) lists NFT collection contracts separately from these protocol contracts.
+Use the deployment for your chain: [Ethereum](#ethereum), [HyperEVM](#hyperevm) or [Robinhood](#robinhood-chain). NFT addresses are in the [collection directory](/gondi-v3/whitelisted-collections/).
 
 :::caution
 Only interact with the addresses listed here. GONDI never asks you to approve tokens or NFTs to any other contract.
@@ -103,7 +103,7 @@ Chain ID `999` · Explorer: [hyperevmscan.io](https://hyperevmscan.io)
 
 Chain ID `4663` · Explorer: [robinhoodchain.blockscout.com](https://robinhoodchain.blockscout.com)
 
-Robinhood Chain uses the GONDI V3.1 suite below. Its [collection directory](/gondi-v3/whitelisted-collections/#robinhood-chain) links the supported catalog entries and their NFT contracts. V3.2 Private Offers are available on Ethereum only.
+GONDI V3.1. See [supported collections and NFT contracts](/gondi-v3/whitelisted-collections/#robinhood-chain). V3.2 Private Offers remain Ethereum-only.
 
 | Contract | Version | Address |
 | --- | --- | --- |

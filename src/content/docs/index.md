@@ -4,15 +4,15 @@ title: "Introducing GONDI"
 
 ## What is GONDI?
 
-GONDI is a decentralized, non-custodial, peer-to-peer protocol for trading and financing NFTs. Users can buy, sell and bid on supported ERC-721 NFTs and individual ERC-1155 units. Eligible ERC-721 NFTs and CryptoPunks can secure loans directly on V3.1 and V3.2; supported ERC-1155 assets must be placed in a vault to be used as collateral.
+GONDI is a decentralized, non-custodial protocol for NFT trading and lending. Trade ERC-721s and ERC-1155 units. Borrow against eligible ERC-721s or CryptoPunks; ERC-1155 collateral requires a vault.
 
-GONDI is deployed on Ethereum mainnet, HyperEVM and Robinhood Chain. Collection eligibility and transaction availability depend on the chain and contract version.
+Availability varies by chain and contract:
 
 | Network | Chain ID | Protocol contracts | Collections |
 | --- | --- | --- | --- |
-| Ethereum | `1` | [Ethereum deployments](/gondi-v3/protocol-contracts/#ethereum) | [Ethereum collections](/gondi-v3/whitelisted-collections/#ethereum) |
-| HyperEVM | `999` | [HyperEVM deployments](/gondi-v3/protocol-contracts/#hyperevm) | [HyperEVM collections](/gondi-v3/whitelisted-collections/#hyperevm) |
-| Robinhood Chain | `4663` | [Robinhood deployments](/gondi-v3/protocol-contracts/#robinhood-chain) | [Robinhood collections](/gondi-v3/whitelisted-collections/#robinhood-chain) |
+| Ethereum | `1` | [Contracts](/gondi-v3/protocol-contracts/#ethereum) | [Collections](/gondi-v3/whitelisted-collections/#ethereum) |
+| HyperEVM | `999` | [Contracts](/gondi-v3/protocol-contracts/#hyperevm) | [Collections](/gondi-v3/whitelisted-collections/#hyperevm) |
+| Robinhood Chain | `4663` | [Contracts](/gondi-v3/protocol-contracts/#robinhood-chain) | [Collections](/gondi-v3/whitelisted-collections/#robinhood-chain) |
 
 ## Trading
 
@@ -20,17 +20,17 @@ GONDI aggregates listings from native GONDI, OpenSea, and the CryptoPunks market
 
 The protocol supports standard bids, multi-item bids, trait and multi-trait bids, and stealth bids (visible only to the NFT owner; bidder wallet and balance are not disclosed).
 
-See [ERC-1155 Trading](/gondi-v3/erc-1155-trading/) for single-unit orders, and [Buy & Sell on GONDI](/gondi-v3/buy-and-sell-on-gondi/#offers-across-an-artists-works) for edition bids and separate offers across an artist's selected ERC-721 works.
+Trade [ERC-1155 units](/gondi-v3/erc-1155-trading/), bid on editions or [selected artist works](/gondi-v3/buy-and-sell-on-gondi/#offers-across-an-artists-works).
 
 ## Lending
 
 GONDI is a peer-to-peer NFT lending protocol with pro-rata interest, instant refinancing, and partial (tranche) refinancing. V3.1 introduces Tranche Seniority for risk segmentation across loan tranches, and V3.2 adds Private Offers for lenders who want to keep a loan to themselves.
 
-Lenders can target a specific NFT, a collection or a fixed set of NFTs matching selected traits. [Trait Loan Offers](/gondi-v3/loan-offers/#trait-loan-offers) share lending capacity across eligible collateral and validate the token ID on-chain when a borrower accepts.
+Lend against an NFT, a collection or [selected traits](/gondi-v3/loan-offers/#trait-loan-offers).
 
 ## V3.1 Features
 
-* **Cross Currency Support.** Purchase Bundler contracts can convert supported currencies during settlement on Ethereum. Available app transactions have specific listing and loan-currency requirements; see [Purchase Bundler](/gondi-v3/purchase-bundler/#supported-currencies) and [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
+* **Currencies.** Supported combinations depend on the transaction. See [buying with a loan](/gondi-v3/purchase-bundler/#supported-currencies) and [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
 * **Tranche Seniority.** Lenders can refinance a portion of an outstanding loan with defined seniority, enabling more granular risk pricing.
 * **Stealth Bidding.** Bids are visible only to the owner of the targeted NFT. Bidder identity and balance are not exposed on-chain or in the UI.
 * **Sell & Repay.** Borrowers can sell escrowed collateral in a single transaction. Outstanding loan principal and accrued interest are repaid; any surplus is transferred to the borrower.

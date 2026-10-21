@@ -17,7 +17,7 @@ Vaults allow users to bundle multiple assets and borrow against them as a single
 
 **ERC-1155 Support**: ERC-1155 tokens cannot be used as direct collateral and must be placed in vaults to receive loan offers.
 
-Buying, listing or bidding on an individual ERC-1155 unit does not require a vault. See [ERC-1155 Trading](/gondi-v3/erc-1155-trading/) for those transactions.
+[Buying, listing and bidding on ERC-1155 units](/gondi-v3/erc-1155-trading/) require no vault.
 
 **Legacy SuperRare Support**: Old SuperRare ERC-721 tokens must be wrapped using GONDI's "Stash" wrapper before use in vaults or individual loans.
 

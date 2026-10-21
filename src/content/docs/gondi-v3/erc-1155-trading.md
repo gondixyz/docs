@@ -1,29 +1,22 @@
 ---
 title: "ERC-1155 Trading"
-description: "Buy, list and bid on individual ERC-1155 units on GONDI, with settlement mechanics and collateral requirements."
+description: "Trade individual ERC-1155 units on GONDI. Borrowing requires a vault."
 ---
 
-GONDI supports direct purchases, listings and item-specific buy offers for ERC-1155 tokens in supported collections. You do not need to place the token in a vault to trade it this way.
+Buy, list and bid on individual ERC-1155 units in [supported collections](/gondi-v3/whitelisted-collections/) without a vault.
 
 ## Units and Ownership
 
-An ERC-1155 token ID can have multiple units held by different wallets. A listing or item-specific bid targets the collection contract and token ID; each fill transfers **one unit**. A holder can sell a unit they own and also buy another holder's unit of the same token ID.
+Buy or sell **one copy at a time**. You can buy another copy even if you already own one.
 
-Multi-unit listings are not supported by this flow. Collection-wide and trait buy offers, and bulk offers across an artist's works, remain ERC-721 features.
+Bids apply to one artwork, not a whole collection, trait or artist.
 
 ## Selling and Buying
 
-* **List a unit:** set the price, payment currency and expiration. Approve the NFT collection for the marketplace operator when required, then sign the listing off-chain.
-* **Buy a listed unit:** execute the listing to transfer one unit from its seller to your wallet and settle payment atomically through Seaport.
-* **Make an item-specific buy offer:** sign a bid for one unit of a particular token ID. A holder with an available unit can accept it; a bid does not reserve a particular holder's unit.
-* **Accept a buy offer:** approve the NFT transfer when required, then execute the bid to exchange one unit for the offered payment.
-
-Settlement requires the seller to hold the unit and the buyer to have sufficient funds and approvals. Applicable marketplace fees and royalties are included in the transaction; see [Protocol Fees](/gondi-v3/protocol-fees/).
+* **List:** set your price, currency and expiration, then approve and sign in your wallet.
+* **Bid:** offer to buy one copy; any owner with an available copy can accept.
+* **Buy or accept:** payment and the NFT transfer happen together. Approve the required transfers in your wallet. [Fees and royalties](/gondi-v3/protocol-fees/) apply.
 
 ## Borrowing Against ERC-1155s
 
-Direct ERC-1155 trading does not make the token eligible for a direct loan. To borrow against supported ERC-1155 assets, place them in a [GONDI vault](/gondi-v3/vaults-and-stash/). The vault's ERC-721 NFT becomes the collateral.
-
-Buy with Loan and Sell & Repay do not apply to an unvaulted ERC-1155 token. Bilateral NFT-for-NFT [Trades](/gondi-v3/trades/) are a separate flow and also require ERC-1155 assets to be vaulted.
-
-Find supported collections and their contract addresses in the [collection directory](/gondi-v3/whitelisted-collections/). Collection availability does not guarantee an active listing or loan offer.
+Place ERC-1155s in a [vault](/gondi-v3/vaults-and-stash/) to borrow against them or use NFT-for-NFT [Trades](/gondi-v3/trades/). Without a vault, Buy with Loan and Sell & Repay are unavailable.

@@ -15,8 +15,9 @@ matter when an agent edits this repository.
 
 ## Content Rules
 
-- Document transaction capabilities, eligibility and settlement mechanics. UI-only
-  features such as watchlists, following and catalog layouts do not need pages.
+- Write for nontechnical users: what they can do, costs and practical limits.
+  Use plain language; omit encoding limits, validator internals and internal labels.
+  State each rule once, briefly. Skip UI-only features.
 - Distinguish deployed contract capabilities from transactions currently available
   in the app. Verify currency, token-standard and chain restrictions per flow.
 - One Markdown file per page under `src/content/docs/`; the path is the URL.
