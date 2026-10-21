@@ -61,6 +61,7 @@ export default defineConfig({
           items: [
             { label: 'Introducing GONDI', link: '/' },
             v3('buy-and-sell-on-gondi'),
+            v3('erc-1155-trading'),
             v3('off-market-listings'),
             v3('trades'),
             v3('loan-basics'),

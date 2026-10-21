@@ -7,9 +7,10 @@ Every loan originated at GONDI requires a borrower to accept a lender's offer. F
 
 ## Loan Offer Options
 
-GONDI offers lenders two ways to submit a loan offer:
+GONDI supports the following loan offer scopes:
 
 1. **Standard Loan Offers:** Offers made to a specific NFT (or a vault with multiple NFTs) listed on GONDI. [Go to section](/learn/how-to-make-a-loan-offer/standard-loan-offers/)
 2. **Collection Loan Offers:** Offers targeting [whitelisted collections](/gondi-v3/whitelisted-collections/) that borrowers can accept at any time using an NFT from that collection as collateral. [Go to section](/learn/how-to-make-a-loan-offer/collection-loan-offers/)
+3. **Trait Loan Offers:** Offers targeting a fixed set of NFTs matching selected traits within an eligible collection. The lender shares a lending capacity across that set. [Learn how trait loan offers work](/gondi-v3/loan-offers/#trait-loan-offers).
 
 Let’s begin with standard loan offers in the next section.

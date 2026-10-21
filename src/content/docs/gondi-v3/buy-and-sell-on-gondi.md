@@ -13,6 +13,10 @@ Gondi aggregates listings from across the ecosystem so you can browse, compare, 
 * **CryptoPunks listings**
 * **Tokenworks**
 
+## ERC-1155 Trading
+
+Buy, list and make item-specific offers on individual ERC-1155 units without vaulting them first. Each supported order transfers one unit of a specified token ID. See [ERC-1155 Trading](/gondi-v3/erc-1155-trading/) for ownership, approval and settlement requirements.
+
 ## Selling on Gondi
 
 **Standard Listings**
@@ -43,7 +47,13 @@ Bid on exactly the attributes you want. Target specific traits (e.g., any Crypto
 
 **Edition Bidding**
 
-Place buy bids on ERC-721 editions.
+Place one buy offer covering the eligible ERC-721 copies of a particular edition. Set a price per copy, expiration and capacity: capacity limits how many copies can fill the offer. Edition bidding must be enabled for that edition. For ERC-1155 editions, use an item-specific bid for one unit of the token ID instead.
+
+### Offers Across an Artist's Works
+
+You can select eligible ERC-721 works by an artist across multiple collections on the same chain, including individual 1/1s and ERC-721 edition copies, and publish bids together. Each selected NFT has its own bid price; the bids share a currency and expiration and can be signed with one bulk signature after any required token approval.
+
+This creates **a separate offer for each selected NFT**. Multiple sellers can accept their respective offers; accepting one does not cancel the others. It is not a single offer that fills with any one work by the artist, and it does not automatically include unselected works or future mints. The artist selection supports up to 50 eligible ERC-721 items; ERC-1155 units use individual item bids.
 
 ## Fee & Royalty Configuration
 

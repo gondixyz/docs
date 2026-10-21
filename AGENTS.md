@@ -15,6 +15,10 @@ matter when an agent edits this repository.
 
 ## Content Rules
 
+- Document transaction capabilities, eligibility and settlement mechanics. UI-only
+  features such as watchlists, following and catalog layouts do not need pages.
+- Distinguish deployed contract capabilities from transactions currently available
+  in the app. Verify currency, token-standard and chain restrictions per flow.
 - One Markdown file per page under `src/content/docs/`; the path is the URL.
   Keep existing URLs stable — the GONDI app ([gondi.xyz](https://gondi.xyz)) and
   external sites deep-link into the docs. Removing or renaming a page requires

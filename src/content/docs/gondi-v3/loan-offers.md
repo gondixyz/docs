@@ -15,7 +15,7 @@ Create loan offers by setting:
 * **Duration**: How long borrowers have to repay
 * **Origination Fee**: Optional upfront fee
 
-You can make offers on specific NFTs or entire collections.
+You can make offers on specific NFTs, entire collections, or NFTs matching selected traits within an eligible collection.
 
 ### Getting Loans (Borrowers)
 
@@ -74,6 +74,19 @@ Offers carrying either option are flagged with an icon in the offer list.
 
 * You offer max 5 WETH per loan with 50 WETH capacity
 * This supports 10 full loans **or** 20 half-loans OR any combination
+
+### Trait Loan Offers
+
+**Trait Loan Offers** let a lender set loan terms for the NFTs matching selected traits within one eligible ERC-721 collection. A borrower must supply a matching NFT as collateral; this is an offer to lend, not an offer to purchase the NFT.
+
+* Set the principal per loan, APR, duration, expiration, optional origination fee and lending capacity.
+* Select one or more supported traits. Multiple selections must use different trait types, and the NFT must match **every** selected trait.
+* Capacity is shared across loans funded by the offer, rather than allocated separately to each matching NFT.
+* Accepting the offer originates a loan under the usual collateral, repayment and liquidation rules.
+
+The eligible token IDs are fixed in the signed offer. GONDI encodes the matching set using an NFT Bit Vector Validator or NFT Packed List Validator; the loan contract checks the collateral token ID against that set when the offer is used. Later mints or metadata changes do not expand an already-signed offer. To lend against a different set, create a new offer.
+
+Trait loan offers require support for the collection, selected traits and loan contract. The app supports eligible collections on V3.1 and V3.2 contracts; CryptoPunks and their wrappers are excluded from this flow. See [Protocol Contracts](/gondi-v3/protocol-contracts/) for the validators deployed on each chain.
 
 ### Competitive Improvements
 
