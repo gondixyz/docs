@@ -43,9 +43,9 @@ Other listing currencies are not enabled for this flow. The presence of a listin
 
 ## Cross Currency & USDC Purchase Bundler
 
-The deployed Purchase Bundler contracts can execute supported currency conversions as part of settlement. Contract support is broader than the combinations currently offered by the app.
+The deployed Purchase Bundler contracts can execute supported currency conversions as part of settlement on Ethereum. Contract support is broader than the combinations currently offered by the app.
 
-A USDC listing can use a USDC loan in the app; it does not require an ETH-to-USDC loan conversion. The app currently selects the loan currency from the listing, using the wrapped token for a native-currency listing. Choosing a different buyer-loan currency, such as a USDC loan for an ETH listing, is not currently enabled. A conversion offered for your upfront payment does not change the currency you owe on the loan.
+A USDC listing can use a USDC loan in the app; it does not require an ETH-to-USDC loan conversion. The app currently selects the loan currency from the listing, using the wrapped token for a native-currency listing. Choosing a different buyer-loan currency, such as a USDC loan for an ETH listing, is not currently enabled.
 
 Cross-currency bid acceptance when selling collateral is a separate transaction described under [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
 

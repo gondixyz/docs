@@ -55,6 +55,8 @@ You can select eligible ERC-721 works by an artist across multiple collections o
 
 This creates **a separate offer for each selected NFT**. Multiple sellers can accept their respective offers; accepting one does not cancel the others. It is not a single offer that fills with any one work by the artist, and it does not automatically include unselected works or future mints. The artist selection supports up to 50 eligible ERC-721 items; ERC-1155 units use individual item bids.
 
+Your potential purchase spend is the sum of the bids plus applicable fees, because every accepted bid is payable separately. Funds remain in your wallet until settlement, and each fill needs sufficient balance and allowance. You cannot select NFTs held by your linked wallets or securing their active loans.
+
 ## Fee & Royalty Configuration
 
 **Broker Fees**

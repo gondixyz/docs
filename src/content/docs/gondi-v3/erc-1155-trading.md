@@ -7,7 +7,7 @@ GONDI supports direct purchases, listings and item-specific buy offers for ERC-1
 
 ## Units and Ownership
 
-An ERC-1155 token ID can have multiple units held by different wallets. A listing or item-specific bid targets the collection contract and token ID; each supported order transfers **one unit**. A holder can sell a unit they own and also buy another unit of the same token ID.
+An ERC-1155 token ID can have multiple units held by different wallets. A listing or item-specific bid targets the collection contract and token ID; each fill transfers **one unit**. A holder can sell a unit they own and also buy another holder's unit of the same token ID.
 
 Multi-unit listings are not supported by this flow. Collection-wide and trait buy offers, and bulk offers across an artist's works, remain ERC-721 features.
 
@@ -23,5 +23,7 @@ Settlement requires the seller to hold the unit and the buyer to have sufficient
 ## Borrowing Against ERC-1155s
 
 Direct ERC-1155 trading does not make the token eligible for a direct loan. To borrow against supported ERC-1155 assets, place them in a [GONDI vault](/gondi-v3/vaults-and-stash/). The vault's ERC-721 NFT becomes the collateral.
+
+Buy with Loan and Sell & Repay do not apply to an unvaulted ERC-1155 token. Bilateral NFT-for-NFT [Trades](/gondi-v3/trades/) are a separate flow and also require ERC-1155 assets to be vaulted.
 
 Find supported collections and their contract addresses in the [collection directory](/gondi-v3/whitelisted-collections/). Collection availability does not guarantee an active listing or loan offer.

@@ -4,7 +4,7 @@ title: "Introducing GONDI"
 
 ## What is GONDI?
 
-GONDI is a decentralized, non-custodial, peer-to-peer protocol for trading and financing NFTs. Users can buy, sell and bid on supported ERC-721 NFTs and individual ERC-1155 units. Eligible ERC-721 NFTs can secure loans directly; supported ERC-1155 assets must be placed in a vault to be used as collateral.
+GONDI is a decentralized, non-custodial, peer-to-peer protocol for trading and financing NFTs. Users can buy, sell and bid on supported ERC-721 NFTs and individual ERC-1155 units. Eligible ERC-721 NFTs and CryptoPunks can secure loans directly on V3.1 and V3.2; supported ERC-1155 assets must be placed in a vault to be used as collateral.
 
 GONDI is deployed on Ethereum mainnet, HyperEVM and Robinhood Chain. Collection eligibility and transaction availability depend on the chain and contract version.
 
