@@ -18,7 +18,8 @@ const redirects = {
 /**
  * Serves `/llms.txt`, `/llms-full.txt` and `/llms-small.txt` (https://llmstxt.org/) so language
  * models and agents can read the docs as plain Markdown. The plugin already leaves out
- * `draft: true` pages; previous protocol versions sort last and stay out of the small file.
+ * `draft: true` pages; the buyer pages sort right after the home page, and previous protocol
+ * versions sort last and stay out of the small file.
  */
 const llmsTxt = starlightLlmsTxt({
   projectName: 'GONDI',
@@ -28,6 +29,7 @@ const llmsTxt = starlightLlmsTxt({
     '- The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under `gondi-v1-and-v2/` describe previous versions.',
     `- Contract addresses for Ethereum, HyperEVM and Robinhood Chain: ${SITE}/gondi-v3/protocol-contracts/`,
     `- Lending from a script or an AI agent: ${SITE}/gondi-v3/lend-with-an-agent/`,
+    `- Buying NFTs on GONDI: ${SITE}/buying/why-buy-on-gondi/, step by step at ${SITE}/buying/how-to-buy-an-nft/, with a loan at ${SITE}/buying/buy-with-a-loan/, and for Blur users at ${SITE}/buying/coming-from-blur/`,
     '- Lending data is public: the GraphQL API at https://api.gondi.xyz/graphql answers reads without authentication and supports introspection.',
   ].join('\n'),
   optionalLinks: [
@@ -38,6 +40,7 @@ const llmsTxt = starlightLlmsTxt({
     },
     { label: 'gondi SDK reference', url: 'https://gondixyz.github.io/gondi-js/' },
   ],
+  promote: ['index*', 'buying/**'],
   demote: ['gondi-v1-and-v2/**'],
   exclude: ['gondi-v1-and-v2/**'],
 });
@@ -78,6 +81,15 @@ export default defineConfig({
       credits: false,
       plugins: [llmsTxt],
       sidebar: [
+        {
+          label: 'Buying on GONDI',
+          items: [
+            'buying/coming-from-blur',
+            'buying/why-buy-on-gondi',
+            'buying/how-to-buy-an-nft',
+            'buying/buy-with-a-loan',
+          ],
+        },
         {
           label: 'GONDI V3.2',
           items: [
