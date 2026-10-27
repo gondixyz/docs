@@ -10,7 +10,7 @@ Every GONDI loan has:
 * **Gross APR**: Annual percentage rate
 * **Due Date**: Repayment deadline to avoid default
 * **Origination Fee**: Optional upfront fee (deducted from principal)
-* **Collateral**: Your NFT (ERC-721s, ERC-1155s, legacy ERC-721s)
+* **Collateral**: Eligible ERC-721s, including vaults; CryptoPunks directly on Ethereum V3.1/V3.2. ERC-1155s require [vaults](/gondi-v3/vaults-and-stash/); some legacy ERC-721s require wrapping.
 
 :::note
 **Pro Rata Interest**

@@ -4,9 +4,15 @@ title: "Introducing GONDI"
 
 ## What is GONDI?
 
-GONDI is a decentralized, non-custodial, peer-to-peer protocol for trading and financing NFTs. Users can buy, sell, bid, and borrow against ERC-721 and ERC-1155 collateral.
+GONDI is a decentralized, non-custodial protocol for NFT trading and lending. Trade ERC-721s and ERC-1155 units. Borrow against eligible ERC-721s or CryptoPunks; ERC-1155 collateral requires a vault.
 
-GONDI is deployed on Ethereum mainnet and HypeEVM.
+Availability varies by chain and contract:
+
+| Network | Chain ID | Protocol contracts | Collections |
+| --- | --- | --- | --- |
+| Ethereum | `1` | [Contracts](/gondi-v3/protocol-contracts/#ethereum) | [Collections](/gondi-v3/whitelisted-collections/#ethereum) |
+| HyperEVM | `999` | [Contracts](/gondi-v3/protocol-contracts/#hyperevm) | [Collections](/gondi-v3/whitelisted-collections/#hyperevm) |
+| Robinhood Chain | `4663` | [Contracts](/gondi-v3/protocol-contracts/#robinhood-chain) | [Collections](/gondi-v3/whitelisted-collections/#robinhood-chain) |
 
 ## Trading
 
@@ -14,13 +20,17 @@ GONDI aggregates listings from native GONDI, OpenSea, and the CryptoPunks market
 
 The protocol supports standard bids, multi-item bids, trait and multi-trait bids, and stealth bids (visible only to the NFT owner; bidder wallet and balance are not disclosed).
 
+Trade [ERC-1155 units](/gondi-v3/erc-1155-trading/), bid on editions or [selected artist works](/gondi-v3/buy-and-sell-on-gondi/#offers-across-an-artists-works).
+
 ## Lending
 
 GONDI is a peer-to-peer NFT lending protocol with pro-rata interest, instant refinancing, and partial (tranche) refinancing. V3.1 introduces Tranche Seniority for risk segmentation across loan tranches, and V3.2 adds Private Offers for lenders who want to keep a loan to themselves.
 
+Lend against an NFT, a collection or [selected traits](/gondi-v3/loan-offers/#trait-loan-offers).
+
 ## V3.1 Features
 
-* **Cross Currency Support.** NFTs listed in one currency can be purchased or bid on in another supported currency. Conversion is handled by the Purchase Bundler. Available on Ethereum mainnet only.
+* **Currencies.** Supported combinations depend on the transaction. See [buying with a loan](/gondi-v3/purchase-bundler/#supported-currencies) and [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
 * **Tranche Seniority.** Lenders can refinance a portion of an outstanding loan with defined seniority, enabling more granular risk pricing.
 * **Stealth Bidding.** Bids are visible only to the owner of the targeted NFT. Bidder identity and balance are not exposed on-chain or in the UI.
 * **Sell & Repay.** Borrowers can sell escrowed collateral in a single transaction. Outstanding loan principal and accrued interest are repaid; any surplus is transferred to the borrower.

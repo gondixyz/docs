@@ -1,91 +1,60 @@
 ---
 title: "Purchase Bundler"
+description: "Buy an NFT with a loan in one transaction. Supported currencies, marketplaces and collateral."
 ---
 
-Purchase Bundler lets you buy an NFT by combining your own funds with an existing Gondi loan offer — all in a single transaction. The NFT goes into escrow, and you immediately become the borrower.
+Buy an NFT with a GONDI loan and pay the rest yourself. The purchase and loan happen in one transaction; wallet approvals may come first.
 
-***
+## How It Works
 
-### How It Works
+1. Choose an eligible listing and funded loan offer on the same chain.
+2. Review terms, approve tokens and pay the balance plus fees.
+3. Repay in the loan currency to recover the NFT, or use [Sell & Repay](/gondi-v3/sell-and-repay/).
 
-1. **Find an NFT** with an available Gondi loan offer
-2. **Choose a loan offer** that suits your terms (principal, APR, duration)
-3. **Execute the purchase** — the seller receives full payment, the NFT moves to escrow, and you become the borrower in one atomic transaction
+**Upfront cost = listing price − loan principal + origination fee + purchase fees.** Gas is additional.
 
-Your upfront payment covers the difference between the NFT price and the loan principal, plus any origination fee.
+## Example
 
-***
+10 ETH listing, 7 WETH loan, 0.20 WETH origination fee:
 
-### Example
+* Net loan: **6.80 WETH**.
+* You pay: **3.20 ETH equivalent + fees and gas** (ETH/WETH is 1:1).
+* At 15% APR for 90 days: approximately **0.26 WETH interest**, **7.26 WETH repayment**.
 
-A 10 ETH NFT has a 7 WETH loan offer with 0.20 WETH origination fee, 15% APR, and 90-day duration:
+## Supported Currencies
 
-* **Upfront payment**: 3.20 WETH (10 - 7 + 0.20 origination)
-* **Interest accrual**: \~0.26 WETH at loan term
-* **Repayment at maturity**: 7.26 WETH (principal + interest)
+For NFTs **not already used as loan collateral**:
 
-You can exit your position anytime by repaying the loan or by selling the NFT through Sell & Repay — sale proceeds repay the loan, and any surplus goes to you.
+* **Ethereum:** ETH or WETH prices use WETH loans; USDC prices use USDC loans.
+* **HyperEVM:** HYPE prices use WHYPE loans.
+* **Robinhood Chain:** ETH prices use WETH loans.
 
-***
+WETH and WHYPE are the wrapped versions of ETH and HYPE used for loans.
 
-### Requirements
-
-* **ETH or WETH** listings support only.  USDC listings do not support Purchase Bundler.
-* A valid loan offer must exist for the NFT.
-* You must have enough funds to cover the upfront payment.
-
-***
+On Ethereum, **WETH-priced purchases with a loan are available only through featured listings on the homepage**. For **USDC-priced purchases**, use the NFT or collection page; homepage featured listings do not support USDC loans.
 
 ## Cross Currency & USDC Purchase Bundler
 
-The Cross Currency Purchase Bundler extends the standard Purchase Bundler to support multi-currency transactions. You can purchase an ETH-listed NFT using a USDC loan, or vice versa — the contract handles the currency conversion automatically in a single atomic transaction.
+You cannot choose a different loan currency—for example, a USDC loan for an ETH-priced NFT. Selling an NFT to repay a loan is covered in [Sell & Repay](/gondi-v3/sell-and-repay/#cross-currency-bid-acceptance).
 
-### How Cross Currency Works
+## Buying an NFT Already in a Loan
 
-1. **Find an NFT listing** in any supported currency (ETH, WETH, USDC, or others)
-2. **Select a loan offer** — the loan can be denominated in a different currency than the listing
-3. **Execute the purchase** — the contract swaps currencies via Uniswap, buys the NFT, and places it in escrow
-4. **Repay in the loan currency** — your repayment obligation is in the currency of the loan, not the listing
+Your purchase repays the seller's loan. The NFT then secures your new loan until you repay it.
 
-### Example: Buying an ETH Listing with a USDC Loan
-
-An NFT is listed for 10 ETH on OpenSea. A lender has a 25,000 USDC loan offer available:
-
-1. You initiate the purchase through the Cross Currency Purchase Bundler
-2. The contract takes the 25,000 USDC loan principal and swaps it to ETH via Uniswap
-3. The resulting ETH is used to purchase the NFT from the marketplace
-4. The NFT moves to escrow, and you become the borrower
-5. You repay the loan in USDC at maturity
-
-### Key Benefits
-
-* **Currency flexibility** — Buy NFTs listed in any currency using loan offers in any other supported currency
-* **Atomic execution** — Currency swap, NFT purchase, and loan creation happen in one transaction
-* **Slippage protection** — Built-in price oracle validation ensures fair conversion rates
-* **Standard fees** — No additional fees for cross-currency conversion; standard Purchase Bundler fees apply
-
-***
+Available on Ethereum. NFT and collection pages support eligible V3.1/V3.2 loans; check the purchase quote for available currencies.
 
 ## Supported Marketplaces
 
-Purchase Bundler transactions are supported across the following platforms:
-
-* **GONDI** — Public and private listings
-* **OpenSea** — Public and private listings
-* **CryptoPunks** — Punks Marketplace
-* **Tokenworks** — NFT Strategy marketplace
-
-***
+* **GONDI / OpenSea:** public and private listings.
+* **CryptoPunks:** public Punks Marketplace listings. Private listings require wrapping and relisting on GONDI.
+* **Tokenworks:** NFT Strategy marketplace.
 
 ## Requirements
 
-* A valid Gondi loan offer must exist for the NFT's collection
-* You must have sufficient funds for the upfront payment (listing price minus loan principal, plus origination fee)
-* Supported currencies: ETH, WETH, USDC (and other whitelisted ERC-20 tokens via Cross Currency)
-* Compatible with Gondi V3.1 escrow systems
-
-***
+* Sufficient funds and approvals for the upfront cost and gas.
+* An NFT supported for loans; ERC-1155s require a [vault](/gondi-v3/vaults-and-stash/).
+* Transfers permitted by the collection; see [ERC-721C](/gondi-v3/erc-721c-whitelisting/).
 
 ## Fees
 
-The buyer pays a 2% Purchase Bundler fee on most transactions. See [Protocol Fees](/gondi-v3/protocol-fees) for the complete fee schedule by marketplace and listing type.
+Check the total [fees](/gondi-v3/protocol-fees/) shown before confirming your purchase.

@@ -79,17 +79,11 @@ export default defineConfig({
       plugins: [llmsTxt],
       sidebar: [
         {
-          label: 'GONDI V3.2',
-          items: [
-            v3('gondi-v3-2'),
-            { label: 'Private Offers', link: '/gondi-v3/loan-offers/#offer-options' },
-          ],
-        },
-        {
           label: 'GONDI V3.1',
           items: [
             { label: 'Introducing GONDI', link: '/' },
             v3('buy-and-sell-on-gondi'),
+            v3('erc-1155-trading'),
             v3('off-market-listings'),
             v3('trades'),
             v3('loan-basics'),
@@ -108,6 +102,13 @@ export default defineConfig({
             v3('security-and-audits'),
             v3('glossary'),
             v3('protocol-disclosures'),
+          ],
+        },
+        {
+          label: 'GONDI V3.2',
+          items: [
+            v3('gondi-v3-2'),
+            { label: 'Private Offers', link: '/gondi-v3/loan-offers/#offer-options' },
           ],
         },
         {
