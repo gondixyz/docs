@@ -33,7 +33,7 @@ The SDK signs in on its first authenticated call and reuses the session.
 
 Trading calls are refused from geoblocked regions, and while GONDI pauses trading.
 
-## Ids
+## Finding Collections, NFTs and Traits
 
 Orders name collections, NFTs and traits by GONDI ids, not by contract address. Look them up once and keep them:
 
