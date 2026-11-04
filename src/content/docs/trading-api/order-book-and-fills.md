@@ -61,4 +61,4 @@ query CollectionBids {
 
 `getOrderSaleCalldata(orderIdInt64, nftId, taker)` returns the calldata that sells an NFT into a bid, built for the signed-in wallet (or `taker`). `nftId` is the NFT you sell, required for collection, trait and set bids. Send the calldata to the order's `marketPlaceAddress`. For a signed-zone bid it carries GONDI's fill signature for that wallet, valid for a few minutes, so send it right away.
 
-Before accepting, the seller approves the NFT contract (`setApprovalForAll`) for Seaport, `0x0000000000000068F116a894984e2DB1123eB395`. Collections that enforce creator royalties through an ERC-721C transfer validator block Seaport as an operator; for those, approve the OpenSea conduit `0x1E0049783F008A0085193E00003D00cd54003c71` instead, which the calldata routes through.
+Before accepting, the seller approves the NFT contract (`setApprovalForAll`) for Seaport, `0x0000000000000068F116a894984e2DB1123eB395`. For ERC-721C collections, approve the OpenSea conduit `0x1E0049783F008A0085193E00003D00cd54003c71` instead.
