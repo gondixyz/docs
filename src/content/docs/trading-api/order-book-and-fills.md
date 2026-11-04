@@ -12,8 +12,7 @@ description: "Read bids and listings from the GONDI API, and build the transacti
 | `side` | `BID` or `ASK` |
 | `statuses` | `Active`, `Executed`, `Cancelled`, `Expired`, `Inactive`, `Outperformed` |
 | `maker` | Only orders placed by these wallets |
-| `excludeMaker` | Leaves out orders placed by these wallets, such as your own when reading the competition |
-| `taker`, `excludeTaker` | Wallet the order is restricted to |
+| `taker` | Only orders restricted to this wallet |
 | `idsInt64` | Specific orders |
 | `nfts` | `[{ nftId, collectionId }]` |
 | `collectionIds`, `traitIds` | Orders on these collections or traits |
