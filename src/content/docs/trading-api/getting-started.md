@@ -40,13 +40,15 @@ Orders name collections, NFTs and traits by GONDI ids, not by contract address. 
 | You have | Query | Returns |
 | --- | --- | --- |
 | A collection slug | `getCollectionBySlug(slug)` | `Collection.id` |
-| A contract address | `getCollectionsByContractAddress(contractAddress)` | Every collection on that contract (an Art Blocks contract holds several) |
-| A contract and token id | `getNftByContractAddressAndTokenId(contractAddress, tokenId)` | `NFT.id` |
+| A collection slug and token id | `getNftBySlugAndTokenId(slug, tokenId)` | `NFT.id` |
 | A trait name and value | `listCollectionTraitValues(collectionIds, key, searchTerm)` | `TraitValue.id`, with its `key` and `value` |
 
 ```graphql
 query Ids {
   getCollectionBySlug(slug: "pudgypenguins") {
+    id
+  }
+  getNftBySlugAndTokenId(slug: "pudgypenguins", tokenId: "1") {
     id
   }
   listCollectionTraitValues(collectionIds: [2173], key: ["Background"], first: 20) {
@@ -61,7 +63,7 @@ query Ids {
 }
 ```
 
-The SDK wraps the first three as `gondi.collectionId({ slug })`, `gondi.collectionId({ contractAddress })` and `gondi.nftId({ contractAddress, tokenId })`.
+The SDK wraps the first two as `gondi.collectionId({ slug })` and `gondi.nftId({ slug, tokenId })`.
 
 ## Amounts, Times and Ids in the Schema
 
