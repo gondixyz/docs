@@ -110,7 +110,3 @@ const traitBid = await gondi.makeOrder({
   isAsk: false,
 });
 ```
-
-## Many Single-NFT Bids at Once
-
-`publishBulkOrdersForNfts(bulkInput: { orders, signature })` publishes many single-NFT bids under one signature: the API returns one `SignatureRequest` covering all of them, and each order still fills and cancels on its own. The SDK calls it `gondi.makeOrders(orders)`.
