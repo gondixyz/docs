@@ -5,23 +5,22 @@ description: "Read bids and listings from the GONDI API, and build the transacti
 
 ## Reading Orders
 
-`listOrdersV2` is the order book: bids and listings on GONDI, plus the OpenSea and CryptoPunks orders GONDI aggregates. Every argument is optional and they combine.
+`listOrdersV2` is the order book. It also returns the OpenSea and CryptoPunks orders GONDI aggregates, so pass `marketplaces: [NATIVE]` to get only GONDI's own orders, the ones this API places and cancels. Every argument is optional and they combine.
 
 | Argument | |
 | --- | --- |
 | `side` | `BID` or `ASK` |
 | `statuses` | `Active`, `Executed`, `Cancelled`, `Expired`, `Inactive`, `Outperformed` |
-| `maker`, `excludeMaker` | Wallets that placed the order |
+| `maker` | Only orders placed by these wallets |
+| `excludeMaker` | Leaves out orders placed by these wallets, such as your own when reading the competition |
 | `taker`, `excludeTaker` | Wallet the order is restricted to |
 | `idsInt64` | Specific orders |
 | `nfts` | `[{ nftId, collectionId }]` |
 | `collectionIds`, `traitIds` | Orders on these collections or traits |
 | `orderTypes` | `SINGLE_NFT`, `COLLECTION`, `TRAIT`, `MULTIPLE_TRAIT`, `SET_BID` |
-| `matchMode` | `ALL` (default) or `ANY`. With `side: BID` and `collectionIds` or `traitIds`, `ANY` returns every kind of bid that can fill there: single-NFT, collection and trait bids together. |
-| `marketplaces` | `NATIVE` for GONDI's own orders, `OPEN_SEA`, `CRYPTOPUNKS`, … |
+| `marketplaces` | `[NATIVE]` for GONDI's own orders |
 | `currencyAddresses` | |
 | `stealth`, `walletAddresses` | Your own [stealth bids](/trading-api/stealth-bids/#reading-your-own-stealth-bids) |
-| `terms` | `{ netAmount: { min, max }, minFloorRatio }` |
 | `sortBy` | `[{ field, order }]`, `field` one of `PRICE`, `NET_AMOUNT`, `CREATED_DATE`, `EXPIRATION`, `FEE`, … |
 | `first`, `after` | Pagination |
 
