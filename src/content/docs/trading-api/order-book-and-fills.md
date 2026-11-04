@@ -18,7 +18,7 @@ description: "Read bids and listings from the GONDI API, and build the transacti
 | `collectionIds`, `traitIds` | Orders on these collections or traits |
 | `orderTypes` | `SINGLE_NFT`, `COLLECTION`, `TRAIT`, `MULTIPLE_TRAIT`, `SET_BID` |
 | `marketplaces` | `[NATIVE]` for GONDI's own orders |
-| `currencyAddresses` | |
+| `currencyAddresses` | Only orders in these currencies, such as WETH `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2` or USDC `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48` |
 | `stealth`, `walletAddresses` | Your own [stealth bids](/trading-api/stealth-bids/#reading-your-own-stealth-bids) |
 | `sortBy` | `[{ field, order }]`, `field` one of `PRICE`, `NET_AMOUNT`, `CREATED_DATE`, `EXPIRATION`, `FEE`, … |
 | `first`, `after` | Pagination |
