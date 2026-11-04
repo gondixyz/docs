@@ -28,6 +28,7 @@ const llmsTxt = starlightLlmsTxt({
     '- The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under `gondi-v1-and-v2/` describe previous versions.',
     `- Contract addresses for Ethereum, HyperEVM and Robinhood Chain: ${SITE}/gondi-v3/protocol-contracts/`,
     `- Lending from a script or an AI agent: ${SITE}/gondi-v3/lend-with-an-agent/`,
+    `- Trading from a script (bids, stealth bids, cancels, fills): ${SITE}/trading-api/getting-started/`,
     '- Lending data is public: the GraphQL API at https://api.gondi.xyz/graphql answers reads without authentication and supports introspection.',
   ].join('\n'),
   optionalLinks: [
@@ -108,6 +109,16 @@ export default defineConfig({
             v3('security-and-audits'),
             v3('glossary'),
             v3('protocol-disclosures'),
+          ],
+        },
+        {
+          label: 'Trading API',
+          items: [
+            'trading-api/getting-started',
+            'trading-api/placing-bids',
+            'trading-api/stealth-bids',
+            'trading-api/cancelling-orders',
+            'trading-api/order-book-and-fills',
           ],
         },
         {
