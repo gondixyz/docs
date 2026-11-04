@@ -65,12 +65,10 @@ query Ids {
 
 The SDK wraps the first two as `gondi.collectionId({ slug })` and `gondi.nftId({ slug, tokenId })`.
 
-## Amounts, Times and Ids in the Schema
+## Amounts and Times
 
 * **Amounts** are `BigInt` strings in the currency's smallest unit: WETH has 18 decimals, USDC 6.
 * **`startTime` and `expirationTime`** are Unix timestamps in seconds.
-* **Order ids** are `Int64`. Collection, NFT and trait ids are `Int`.
-* **Lists** are Relay connections: pass `first` and the previous page's `pageInfo.endCursor` as `after`.
 
 ## Currency Approval
 
