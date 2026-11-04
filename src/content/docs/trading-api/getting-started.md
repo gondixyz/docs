@@ -3,9 +3,11 @@ title: "Getting Started"
 description: "Trade NFTs on GONDI from a script: the GraphQL endpoint, signing in, finding collection, NFT and trait ids, amounts and the currency approval bids need."
 ---
 
-GONDI's trading API lets a script or a trading desk do everything the GONDI app does with bids: place single-NFT, collection, trait and set bids, place them as stealth bids, cancel them (without gas, for most bids), read the order book and fill orders.
+GONDI's trading API lets a script or a trading desk bid on NFTs the way the GONDI app does: place single-NFT, collection, trait and set bids, place them as stealth bids, cancel them (without gas, for most bids), read the order book and accept bids on NFTs you hold.
 
-It is the same GraphQL API the app uses. Reads are public; anything that creates or cancels an order needs a signed-in wallet.
+It is the same GraphQL API the app uses. Reads are public; anything that creates, cancels or accepts an order needs a signed-in wallet.
+
+There are no API keys: a wallet signature is the only credential, as described under [Signing In](#signing-in).
 
 | | |
 | --- | --- |
@@ -25,11 +27,34 @@ The pages in this section:
 Mutations that create or cancel orders act for the signed-in wallet: the order's maker is always that wallet.
 
 1. `generateSignInNonce(nonceInput: { walletAddress })` returns a nonce.
-2. The wallet signs a [Sign-In with Ethereum](https://eips.ethereum.org/EIPS/eip-4361) message carrying that nonce. This is a signature, not a transaction, so it costs no gas.
+2. The wallet signs a [Sign-In with Ethereum](https://eips.ethereum.org/EIPS/eip-4361) message carrying that nonce, as a plain `personal_sign` message. This is a signature, not a transaction, so it costs no gas.
 3. `signInWithEthereum(siweInput: { message, signature })` returns a session token.
-4. Send it as `Authorization: Bearer <token>` on every call that publishes, cancels or fills an order.
+4. Send it as `Authorization: Bearer <token>` on every call that publishes, cancels or accepts an order.
 
-The SDK signs in on its first authenticated call and reuses the session.
+The API checks the message strictly and rejects it unless:
+
+* the domain is `gondi.xyz` and the URI is `https://api.gondi.xyz/graphql`;
+* the statement is exactly `Sign in with Ethereum to the app.`;
+* the chain id is `1` (Ethereum);
+* the address is checksummed ([EIP-55](https://eips.ethereum.org/EIPS/eip-55));
+* `Issued At` is within 5 minutes of the API's clock.
+
+The message to sign, line by line:
+
+```text
+gondi.xyz wants you to sign in with your Ethereum account:
+0xYourChecksummedWalletAddress
+
+Sign in with Ethereum to the app.
+
+URI: https://api.gondi.xyz/graphql
+Version: 1
+Chain ID: 1
+Nonce: <nonce from generateSignInNonce>
+Issued At: 2026-11-04T17:00:00.000Z
+```
+
+The SDK builds and signs this message on its first authenticated call and reuses the session.
 
 Trading calls are refused from geoblocked regions, and while GONDI pauses trading.
 
