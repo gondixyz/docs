@@ -101,27 +101,32 @@ A bid is a signed [Seaport](https://github.com/ProjectOpenSea/seaport) order: th
 
 The wallet must still hold the funds and the approval when a seller fills the bid, or the fill fails.
 
+With the [`gondi` SDK](https://www.npmjs.com/package/gondi), create a client from the wallet and send the approval once. `approveToken` approves an unlimited amount unless you pass `amount`.
+
 ```ts
 import { Gondi } from 'gondi';
-import { createWalletClient, http, maxUint256 } from 'viem';
+import { createWalletClient, http } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { mainnet } from 'viem/chains';
 
 const WETH = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
-const SEAPORT = '0x0000000000000068F116a894984e2DB1123eB395';
 
-const wallet = createWalletClient({
-  account: privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`),
-  transport: http(process.env.RPC_URL),
-  chain: mainnet,
+const gondi = new Gondi({
+  wallet: createWalletClient({
+    account: privateKeyToAccount(process.env.PRIVATE_KEY as `0x${string}`),
+    transport: http(process.env.RPC_URL),
+    chain: mainnet,
+  }),
 });
-const gondi = new Gondi({ wallet });
 
-if (!(await gondi.isApprovedToken({ tokenAddress: WETH, to: SEAPORT, amount: maxUint256 }))) {
-  const approval = await gondi.approveToken({ tokenAddress: WETH, to: SEAPORT });
-  await approval.waitTxInBlock();
-}
+const approval = await gondi.approveToken({
+  tokenAddress: WETH,
+  to: '0x0000000000000068F116a894984e2DB1123eB395', // Seaport 1.6
+});
+await approval.waitTxInBlock();
 ```
+
+The other pages reuse this `gondi` client and `WETH` constant in their SDK examples.
 
 :::caution
 The wallet signs orders that move real funds. Keep its private key out of logs and prompts, and only approve the contracts listed here and under [Protocol Contracts](/gondi-v3/protocol-contracts/).
