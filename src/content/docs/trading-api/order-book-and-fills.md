@@ -1,0 +1,64 @@
+---
+title: "Order Book & Fills"
+description: "Read bids and listings from the GONDI API, and build the transaction that accepts a bid."
+---
+
+## Reading Orders
+
+`listOrdersV2` is the order book. It also returns the OpenSea and CryptoPunks orders GONDI aggregates, so pass `marketplaces: [NATIVE]` to get only GONDI's own orders, the ones this API places and cancels. Every argument is optional and they combine.
+
+| Argument | |
+| --- | --- |
+| `side` | `BID` or `ASK` |
+| `statuses` | `Active`, `Executed`, `Cancelled`, `Expired`, `Inactive`, `Outperformed` |
+| `maker` | Only orders placed by these wallets |
+| `taker` | Only orders restricted to this wallet |
+| `idsInt64` | Specific orders |
+| `nfts` | `[{ nftId, collectionId }]` |
+| `collectionIds`, `traitIds` | Orders on these collections or traits |
+| `orderTypes` | `SINGLE_NFT`, `COLLECTION`, `TRAIT`, `MULTIPLE_TRAIT`, `SET_BID` |
+| `marketplaces` | `[NATIVE]` for GONDI's own orders |
+| `currencyAddresses` | Only orders in these currencies, such as WETH `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2` or USDC `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48` |
+| `stealth`, `walletAddresses` | Your own [stealth bids](/trading-api/stealth-bids/#reading-your-own-stealth-bids) |
+| `sortBy` | `[{ field, order }]`, `field` one of `PRICE`, `NET_AMOUNT`, `CREATED_DATE`, `EXPIRATION`, `FEE`, … |
+| `first`, `after` | Pagination |
+
+```graphql
+query CollectionBids {
+  listOrdersV2(
+    side: BID
+    collectionIds: [2173]
+    marketplaces: [NATIVE]
+    statuses: [Active]
+    first: 20
+  ) {
+    edges {
+      node {
+        __typename
+        id
+        price
+        netAmount
+        fees
+        currencyAddress
+        maker
+        maxExecutions
+        executions
+        expiration
+        cancelsOffChain
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}
+```
+
+`__typename` tells the kind: `SingleNFTOrder`, `CollectionOrder`, `TraitOrder`, `MultipleTraitOrder` or `SetBidOrder` (and `StealthMaskedOrder` for a [stealth bid](/trading-api/stealth-bids/#the-masked-order) you can fill). `evmOrder(integerStrings: true)` returns the underlying Seaport order.
+
+## Accepting a Bid
+
+`getOrderSaleCalldata(orderIdInt64, nftId, taker)` returns the calldata that sells an NFT into a bid, built for the signed-in wallet (or `taker`). `nftId` is the NFT you sell, required for collection, trait and set bids. Send the calldata to the order's `marketPlaceAddress`. For a signed-zone bid it carries GONDI's fill signature for that wallet, valid for a few minutes, so send it right away.
+
+Before accepting, the seller approves the NFT contract (`setApprovalForAll`) for Seaport, `0x0000000000000068F116a894984e2DB1123eB395`. For ERC-721C collections, approve the OpenSea conduit `0x1E0049783F008A0085193E00003D00cd54003c71` instead.
