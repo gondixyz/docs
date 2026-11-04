@@ -1,6 +1,6 @@
 ---
 title: "Order Book & Fills"
-description: "Read bids and listings from the GONDI API, and build the transactions that accept a bid or buy a listing."
+description: "Read bids and listings from the GONDI API, and build the transaction that accepts a bid."
 ---
 
 ## Reading Orders
@@ -59,14 +59,8 @@ query CollectionBids {
 
 `__typename` tells the kind: `SingleNFTOrder`, `CollectionOrder`, `TraitOrder`, `MultipleTraitOrder` or `SetBidOrder` (and `StealthMaskedOrder` for a [stealth bid](/trading-api/stealth-bids/#the-masked-order) you can fill). `evmOrder(integerStrings: true)` returns the underlying Seaport order.
 
-## Filling Orders
+## Accepting a Bid
 
-The API returns ready-to-send calldata, built for the signed-in wallet (or `taker`); the wallet sends it to the order's `marketPlaceAddress`.
+`getOrderSaleCalldata(orderIdInt64, nftId, taker)` returns the calldata that sells an NFT into a bid, built for the signed-in wallet (or `taker`). `nftId` is the NFT you sell, required for collection, trait and set bids. Send the calldata to the order's `marketPlaceAddress`. For a signed-zone bid it carries GONDI's fill signature for that wallet, valid for a few minutes, so send it right away.
 
-| Query | Use |
-| --- | --- |
-| `getOrderSaleCalldata(orderIdInt64, nftId, taker)` | Accept one bid. `nftId` is the NFT you sell into it, required for collection, trait and set bids. For a signed-zone bid the calldata carries GONDI's fill signature for that wallet, valid for a few minutes: send it right away. |
-| `getSaleManyOrdersCalldata(sales: [{ orderId, nftId }])` | Accept several bids, one transaction per marketplace |
-| `getFulfillManyOrdersCalldata(orderIds)` | Buy several listings |
-
-To accept a bid, the seller approves the NFT contract (`setApprovalForAll`) for Seaport, `0x0000000000000068F116a894984e2DB1123eB395`. Collections that enforce creator royalties through an ERC-721C transfer validator block Seaport as an operator; for those, approve the OpenSea conduit `0x1E0049783F008A0085193E00003D00cd54003c71` instead, which the calldata routes through. Buying a listing needs the currency.
+Before accepting, the seller approves the NFT contract (`setApprovalForAll`) for Seaport, `0x0000000000000068F116a894984e2DB1123eB395`. Collections that enforce creator royalties through an ERC-721C transfer validator block Seaport as an operator; for those, approve the OpenSea conduit `0x1E0049783F008A0085193E00003D00cd54003c71` instead, which the calldata routes through.

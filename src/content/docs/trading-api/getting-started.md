@@ -18,7 +18,7 @@ The pages in this section:
 * [Placing Bids](/trading-api/placing-bids/): the four kinds of bid and how to sign one.
 * [Stealth Bids](/trading-api/stealth-bids/): bids only the holders who can fill them see.
 * [Cancelling Orders](/trading-api/cancelling-orders/): gasless and onchain cancels.
-* [Order Book & Fills](/trading-api/order-book-and-fills/): reading bids and listings, and filling them.
+* [Order Book & Fills](/trading-api/order-book-and-fills/): reading bids and listings, and accepting a bid.
 
 ## Signing In
 
