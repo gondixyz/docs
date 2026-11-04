@@ -1,6 +1,6 @@
 ---
 title: "Order Book & Fills"
-description: "Read bids, listings and sales from the GONDI API, and build the transactions that accept a bid or buy a listing."
+description: "Read bids and listings from the GONDI API, and build the transactions that accept a bid or buy a listing."
 ---
 
 ## Reading Orders
@@ -58,13 +58,6 @@ query CollectionBids {
 ```
 
 `__typename` tells the kind: `SingleNFTOrder`, `CollectionOrder`, `TraitOrder`, `MultipleTraitOrder` or `SetBidOrder` (and `StealthMaskedOrder` for a [stealth bid](/trading-api/stealth-bids/#the-masked-order) you can fill). `evmOrder(integerStrings: true)` returns the underlying Seaport order.
-
-Other reads:
-
-* `getCollectionHighestBidMatchingTraits(collectionId, traitIds)`: the best collection, trait or multi-trait bid an NFT with those traits can fill.
-* `collectionMarketDepth(collectionIds)`: bid and listing depth per collection.
-* `listSales(collections, nfts, traits, users, fromTimestamp, toTimestamp, …)`: executed sales.
-* `saleListingUpdates(collections, nftIds, marketplaces)`: a subscription that streams listing and sale changes over WebSocket.
 
 ## Filling Orders
 
