@@ -183,6 +183,6 @@ The same client also makes single-NFT offers (`makeSingleNftOffer`) and trait of
 * **Fees**: the protocol takes 15% of the interest the lender earns and of any origination fee, and 20% of the interest on loans funded by a Private Offer. See [Protocol Fees](/gondi-v3/protocol-fees/).
 * **Smart contracts**: audit reports for every version are under [Security & Audits](/gondi-v3/security-and-audits/).
 
-:::note
-An MCP server that lets AI agents use GONDI directly is on the way. This page will link it once it is live.
+:::tip
+To ask an AI assistant about lending rates, offers and lenders without writing queries, connect it to the read-only [GONDI MCP server](/gondi-v3/mcp-server/).
 :::
