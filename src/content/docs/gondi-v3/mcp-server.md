@@ -87,7 +87,7 @@ The server identifies itself as `gondi` ("GONDI") and offers 20 tools. Tools tha
 | `get_floor_price_history` | How a collection's floor moved, in ETH: one point a day (at most 31, evenly spaced over a long period), the floor at the start and now, and the change in percent. | `collection_slug`; `period`: `DAYS_7`, `DAYS_30` (default), `DAYS_90`, `DAYS_180` or `DAYS_365`. |
 | `list_top_collections` | The top and trending collections, ranked as GONDI's collections table ranks them, with floor price and its change, volume, sale count and page. A collection and its wrapped forms are one row. | `sort_by`: `VOLUME` (default), `SALES`, `TRENDING`, `MARKET_CAP` or `FLOOR_CHANGE`; `period`: `1D`, `7D` (default) or `30D`; `chain`. |
 
-Every listing and bid the market tools answer carries `gondi_fee_percent`, the GONDI fee its seller or bidder pays.
+Every listing and bid the market tools answer carries `gondi_fee_percent`, the GONDI fee its seller pays when it executes.
 
 ### Lending
 
