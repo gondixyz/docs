@@ -11,6 +11,7 @@ GONDI is an NFT marketplace with peer-to-peer lending built in: on Ethereum, Hyp
 | Transport | Streamable HTTP (stateless, JSON responses) |
 | Authentication | None |
 | MCP Registry | `xyz.gondi/mcp` |
+| Public repository | [gondixyz/mcp](https://github.com/gondixyz/mcp): README, registry manifest and the questions we test it with |
 
 ## Setup
 
@@ -166,3 +167,4 @@ See [Protocol Fees](/gondi-v3/protocol-fees/) for every fee, including the lendi
 * **Live data**: answers come from the same public data as the GraphQL API at `https://api.gondi.xyz/graphql`, at the moment of the call.
 * **Rate limits**: requests are rate-limited per IP address.
 * **Not financial advice**: the assistant's suggestions are based on market data only. Buying, borrowing and lending against NFTs carry risk: a loan not repaid by its expiry defaults and the borrower loses the NFT, and lenders face the risks listed under [Lend with an Agent](/gondi-v3/lend-with-an-agent/#risks-and-fees).
+* **Wrong answer?** Open an issue on [gondixyz/mcp](https://github.com/gondixyz/mcp/issues/new/choose) with your question and what the assistant said. The same repository is where to ask for a new tool.

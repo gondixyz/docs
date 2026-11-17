@@ -28,7 +28,7 @@ const llmsTxt = starlightLlmsTxt({
     '- The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under `gondi-v1-and-v2/` describe previous versions.',
     `- Contract addresses for Ethereum, HyperEVM and Robinhood Chain: ${SITE}/gondi-v3/protocol-contracts/`,
     `- Lending from a script or an AI agent: ${SITE}/gondi-v3/lend-with-an-agent/`,
-    `- Read-only MCP server for AI assistants (marketplace and lending data, no API key): https://api.gondi.xyz/mcp — setup at ${SITE}/gondi-v3/mcp-server/`,
+    `- Read-only MCP server for AI assistants (marketplace and lending data, no API key): https://api.gondi.xyz/mcp — setup at ${SITE}/gondi-v3/mcp-server/, public repository at https://github.com/gondixyz/mcp`,
     `- Trading from a script (bids, stealth bids, cancels, fills): ${SITE}/trading-api/getting-started/`,
     '- Lending data is public: the GraphQL API at https://api.gondi.xyz/graphql answers reads without authentication and supports introspection.',
   ].join('\n'),
