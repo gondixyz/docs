@@ -29,11 +29,13 @@ Fees applied when an NFT is sold on GONDI without any loan involvement.
 | Operation | Seller Fee | Buyer Fee |
 | --- | --- | --- |
 | Public listing | 0.5% | 0% |
-| Public bid | 0% | 0.5% |
+| Public bid | 0.5% | 0% |
 | Private Listing | 0% | 0% |
 | Stealth Bid | 0.5% | 0.5% |
 | CryptoPunks sale (no loan) | 0% | 0% |
 | Off-Market | 2% | 0% |
+
+A seller fee comes out of the sale price. A bidder on a public bid pays exactly their bid, and the seller receives the bid less 0.5%. A stealth bid's buyer fee is added on top: the bidder pays their bid plus 0.5%, and the seller receives the bid less 0.5%.
 
 CryptoPunks must be wrapped to trade on GONDI. Regular CryptoPunks sales carry zero fees on both sides to honor the CryptoPunks marketplace tradition.
 
@@ -46,10 +48,12 @@ Fees applied when a borrower sells an escrowed NFT to repay an outstanding loan.
 | Operation          | Seller Fee | Buyer Fee |
 | ------------------ | ---------- | --------- |
 | Public listing     | 2%         | 0%        |
-| Public bid         | 1.5%       | 0.5%      |
+| Public bid         | 2%         | 0%        |
 | Private listing    | 2%         | 0%        |
 | Stealth Bid        | 2%         | 0.5%      |
 | Off-Market Listing | 2.5%       | 0%        |
+
+Accepting a public bid with Sell & Repay costs the seller 2% of the bid in total: the bid's 0.5% sale fee plus 1.5% more. The bidder pays exactly their bid. A stealth bid's bidder still pays the 0.5% buyer fee on top of their bid.
 
 ***
 
@@ -91,4 +95,4 @@ No protocol fees are charged on auction liquidations.
 * **Private sales** between known parties carry no fees (except when involving a loan)
 * **CryptoPunks** regular sales carry zero fees; loan-related transactions follow standard loan fees
 
-*Updated on February 24th, 2026*
+*Updated on November 17th, 2026*
