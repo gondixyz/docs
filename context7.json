@@ -1,0 +1,27 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "GONDI",
+  "description": "Official documentation of GONDI (docs.gondi.xyz), an NFT marketplace with peer-to-peer lending on Ethereum, HyperEVM and Robinhood Chain: loans, loan offers, refinancing, trading, fees, contract addresses, the trading API and the MCP server.",
+  "folders": ["src/content/docs"],
+  "excludeFolders": [
+    "src/content/docs/content-with-pools",
+    "src/assets",
+    "src/components",
+    "src/pages",
+    "src/styles",
+    "public",
+    "scripts",
+    ".github"
+  ],
+  "excludeFiles": ["README.md", "AGENTS.md", "CLAUDE.md"],
+  "rules": [
+    "The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under gondi-v1-and-v2/ describe previous versions.",
+    "The MCP server at https://api.gondi.xyz/mcp is read-only and needs no API key and no wallet: it cannot sign or send anything.",
+    "To sign in, approve the loan contract, and sign or cancel offers from a script, use the gondi npm SDK (https://www.npmjs.com/package/gondi) with the user's own wallet.",
+    "The GraphQL API at https://api.gondi.xyz/graphql has no API keys: reads are public and introspection is enabled; creating, cancelling or accepting an order needs a wallet signed in with Sign-In with Ethereum.",
+    "Take contract addresses from the Protocol Contracts page (gondi-v3/protocol-contracts) and approve only the contracts listed there.",
+    "A loan offer's duration is a whole number of days: a multiple of 30 days, or 3, 5, 7, 10, 15, 20 or 45 days.",
+    "In the GraphQL API, amounts are in the currency's smallest unit and APRs are in basis points (1000 is 10%).",
+    "Keep a wallet's private key out of prompts and logs."
+  ]
+}
