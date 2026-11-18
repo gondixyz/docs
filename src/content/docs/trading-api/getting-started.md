@@ -22,6 +22,8 @@ The pages in this section:
 * [Cancelling Orders](/trading-api/cancelling-orders/): gasless and onchain cancels.
 * [Order Book & Fills](/trading-api/order-book-and-fills/): reading bids and listings, and accepting a bid.
 
+To keep bids and listings competitive without writing code, the [GONDI Market Maker](/trading-api/market-maker/) is a ready-made desktop app built on this API.
+
 ## Signing In
 
 Mutations that create or cancel orders act for the signed-in wallet: the order's maker is always that wallet.
