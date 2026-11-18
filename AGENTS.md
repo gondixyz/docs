@@ -38,6 +38,11 @@ matter when an agent edits this repository.
   `bun run docs:collections`; do not hand-edit its rows or counts. Keep prose
   outside the markers. Refreshing needs the public API; builds stay offline.
 
+- `context7.json` tells [Context7](https://context7.com) which Markdown to index
+  (`src/content/docs/`, minus the draft `content-with-pools/` pages) and carries
+  `rules` that restate facts from the pages. When a page changes one of those
+  facts, change the rule with it.
+
 ## Gotchas
 
 - `astro` is pinned to `~7.1`: Starlight asides did not render on 7.2.x. After
