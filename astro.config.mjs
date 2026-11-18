@@ -30,6 +30,7 @@ const llmsTxt = starlightLlmsTxt({
     `- Lending from a script or an AI agent: ${SITE}/gondi-v3/lend-with-an-agent/`,
     `- Read-only MCP server for AI assistants (marketplace and lending data, no API key): https://api.gondi.xyz/mcp — setup at ${SITE}/gondi-v3/mcp-server/, public repository at https://github.com/gondixyz/mcp`,
     `- Trading from a script (bids, stealth bids, cancels, fills): ${SITE}/trading-api/getting-started/`,
+    `- Market-making bot for bids and listings on GONDI and OpenSea, a desktop app with no code needed: ${SITE}/trading-api/market-maker/, public repository at https://github.com/gondixyz/market-maker`,
     '- Lending data is public: the GraphQL API at https://api.gondi.xyz/graphql answers reads without authentication and supports introspection.',
   ].join('\n'),
   optionalLinks: [
@@ -121,6 +122,7 @@ export default defineConfig({
             'trading-api/stealth-bids',
             'trading-api/cancelling-orders',
             'trading-api/order-book-and-fills',
+            'trading-api/market-maker',
           ],
         },
         {
