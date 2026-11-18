@@ -23,7 +23,7 @@ const redirects = {
 const llmsTxt = starlightLlmsTxt({
   projectName: 'GONDI',
   description:
-    'GONDI is a peer-to-peer NFT liquidity protocol: lenders sign loan offers in ERC-20 tokens, borrowers take them against NFT collateral, and NFTs are bought and sold with or without a loan.',
+    'GONDI is an NFT marketplace with built-in peer-to-peer lending: lenders sign loan offers in ERC-20 tokens, borrowers take them against NFT collateral, and NFTs are bought and sold with or without a loan.',
   details: [
     '- The current protocol is GONDI V3.1; GONDI V3.2 adds Private Offers on Ethereum only. Pages under `gondi-v1-and-v2/` describe previous versions.',
     `- Contract addresses for Ethereum, HyperEVM and Robinhood Chain: ${SITE}/gondi-v3/protocol-contracts/`,
@@ -55,7 +55,7 @@ export default defineConfig({
     starlight({
       title: 'GONDI Docs',
       description:
-        'Documentation for GONDI, the NFT liquidity protocol: trading, lending, contracts and guides.',
+        'Documentation for GONDI, the NFT marketplace with built-in lending: trading, lending, contracts and guides.',
       logo: {
         light: './src/assets/logo-light.svg',
         dark: './src/assets/logo-dark.svg',
