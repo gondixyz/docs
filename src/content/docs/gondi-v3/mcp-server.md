@@ -34,7 +34,9 @@ claude mcp add --transport http gondi https://api.gondi.xyz/mcp
 
 ### Cursor
 
-Add the server to `~/.cursor/mcp.json` (every project) or `.cursor/mcp.json` (one project):
+[![Add the GONDI MCP server to Cursor](../../../assets/content/gondi-v3/mcp-server/add-to-cursor.svg)](https://cursor.com/en/install-mcp?name=gondi&config=eyJ1cmwiOiJodHRwczovL2FwaS5nb25kaS54eXovbWNwIn0%3D)
+
+The button opens Cursor and asks you to confirm the install. Or add the server yourself to `~/.cursor/mcp.json` (every project) or `.cursor/mcp.json` (one project):
 
 ```json
 {
@@ -48,7 +50,9 @@ Add the server to `~/.cursor/mcp.json` (every project) or `.cursor/mcp.json` (on
 
 ### VS Code
 
-Run **MCP: Add Server** from the Command Palette, choose **HTTP** and enter `https://api.gondi.xyz/mcp`. Or add it to `.vscode/mcp.json` in your workspace:
+[Install the GONDI MCP server in VS Code](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522gondi%2522%252C%2522type%2522%253A%2522http%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fapi.gondi.xyz%252Fmcp%2522%257D): the link opens VS Code and shows the server for you to review before installing.
+
+You can also run **MCP: Add Server** from the Command Palette, choose **HTTP** and enter `https://api.gondi.xyz/mcp`. Or add it to `.vscode/mcp.json` in your workspace:
 
 ```json
 {
