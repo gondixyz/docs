@@ -1,6 +1,8 @@
 ---
-title: "MCP Server"
-description: "Connect Claude, ChatGPT, Cursor, VS Code or any MCP client to GONDI's read-only MCP server and ask about NFT prices, sales, floor history, top collections, fees, wallet value, loan offers, your loans, what you can borrow and lender returns."
+title: "GONDI MCP Server for AI Assistants"
+description: "Connect AI assistants to GONDI's read-only MCP server: live NFT prices, bids, listings, sales, and lending and borrowing data from the GONDI marketplace."
+sidebar:
+  label: "MCP Server"
 ---
 
 GONDI is an NFT marketplace with peer-to-peer lending built in: on Ethereum, Hyperliquid (HyperEVM) and Robinhood Chain you buy, sell, list and bid on NFTs, and borrow or lend against them. GONDI runs a hosted [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that gives AI assistants live GONDI data: floor prices, top bids, the cheapest listings, recent sales and floor history, the top and trending collections, marketplace fees, what a wallet is worth, loan offers and lending rates, a borrower's open loans, what their NFTs can borrow and what buying with a loan costs, top lenders and their returns. Add it to your assistant once, then ask questions in plain language. It only reads data: it needs no API key and no wallet, and it cannot sign or send anything.
